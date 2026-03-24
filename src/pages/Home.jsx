@@ -9,6 +9,14 @@ import "swiper/css";
 import gettingStartedImage from "@/assets/gettingStarted.webp";
 import howItWorksImage from "@/assets/HowItWorks.webp";
 import mvAIImage from "@/assets/mvai.webp";
+import bankofamerica from "@/assets/banks/bankofamerica.png";
+import hsbc from "@/assets/banks/hsbc.png";
+import citibank from "@/assets/banks/citibank.png";
+import goldmanSachs from "@/assets/banks/goldmansachs.png";
+import barclays from "@/assets/banks/barclays.png";
+import jpmorgan from "@/assets/banks/jpmorgan.png";
+import ubs from "@/assets/banks/ubs.png";
+import deutsche from "@/assets/banks/deutsche.png";
 
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
@@ -178,14 +186,14 @@ const Home = () => {
   ];
 
   const liquidityProviders = [
-    "GlobalFX",
-    "NovaPrime",
-    "BlueWave Markets",
-    "Quantum Liquidity",
-    "ApexTrade Hub",
-    "Vertex Capital",
-    "Crown Exchange",
-    "AlphaStream",
+    { name: "JPMorgan Chase", logo: jpmorgan },
+    { name: "Goldman Sachs", logo: goldmanSachs },
+    { name: "HSBC", logo: hsbc },
+    { name: "Bank of America", logo: bankofamerica },
+    { name: "Barclays", logo: barclays },
+    { name: "Citibank", logo: citibank },
+    { name: "UBS", logo: ubs },
+    { name: "Deutsche Bank", logo: deutsche },
   ];
 
   const handleAiPrev = () => {
@@ -686,20 +694,41 @@ const Home = () => {
                   className="text-xs font-semibold uppercase tracking-[0.24em]"
                 />
                 <h2 className="mt-3">Connected to a Broader Trading Ecosystem</h2>
+                <p className="mx-auto mt-4 max-w-3xl text-base text-text-muted">
+                  PrimeProX is supported by a broader institutional ecosystem through globally recognized banking and
+                  financial liquidity relationships.
+                </p>
               </div>
 
-              <div className="relative">
-                <div className="flex animate-marquee gap-6 hover:marquee-paused">
-                  {[...liquidityProviders, ...liquidityProviders].map((provider, index) => (
-                    <div
-                      key={index}
-                      className="min-w-55 shrink-0 rounded-2xl border border-border bg-linear-to-br from-bg-elevated to-bg-card px-8 py-6"
-                    >
-                      <p className="text-center text-base font-semibold text-text-primary">{provider}</p>
+              <Swiper
+                modules={[Autoplay]}
+                slidesPerView={2}
+                spaceBetween={20}
+                loop={true}
+                speed={3000}
+                autoplay={{
+                  delay: 0,
+                  disableOnInteraction: false,
+                }}
+                breakpoints={{
+                  640: { slidesPerView: 3 },
+                  768: { slidesPerView: 4 },
+                  1024: { slidesPerView: 6 },
+                }}
+                className="w-full"
+              >
+                {liquidityProviders.map((provider, index) => (
+                  <SwiperSlide key={index}>
+                    <div className="flex h-24 items-center justify-center rounded-3xl border border-border bg-linear-to-br from-bg-elevated to-bg-card px-6 py-4 transition-smooth hover:border-primary/40">
+                      <img
+                        src={provider.logo}
+                        alt={provider.name}
+                        className="max-h-12 w-auto object-contain opacity-80 transition duration-300 hover:opacity-100"
+                      />
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </AnimatedContent>
         </div>
