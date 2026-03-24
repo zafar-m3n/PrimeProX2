@@ -1,6 +1,8 @@
 import React, { useEffect, useMemo } from "react";
 import { Link } from "react-router-dom";
 
+import depositWithdrawalImage from "@/assets/depositWithdrawal.webp";
+
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import AnimatedContent from "@/components/ui/AnimatedContent";
@@ -165,7 +167,7 @@ const DepositsWithdrawals = () => {
                 <div className="space-y-6">
                   <div className="gradient-border relative overflow-hidden rounded-4xl p-3">
                     <img
-                      src="https://picsum.photos/1200/900?random=301"
+                      src={depositWithdrawalImage}
                       alt="Deposits and withdrawals"
                       className="h-80 w-full rounded-3xl object-cover sm:h-112"
                     />

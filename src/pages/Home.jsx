@@ -6,6 +6,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 
+import gettingStartedImage from "@/assets/gettingStarted.webp";
+import howItWorksImage from "@/assets/HowItWorks.webp";
+import mvAIImage from "@/assets/mvai.webp";
+
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import AnimatedContent from "@/components/ui/AnimatedContent";
@@ -316,7 +320,7 @@ const Home = () => {
             >
               <div className="gradient-border relative overflow-hidden rounded-4xl p-3">
                 <img
-                  src="https://picsum.photos/900/700?random=11"
+                  src={gettingStartedImage}
                   alt="PrimeProX platform placeholder"
                   className="h-80 w-full rounded-3xl object-cover sm:h-105"
                 />
@@ -441,7 +445,7 @@ const Home = () => {
             >
               <div className="relative overflow-hidden rounded-4xl border border-border bg-bg-card p-3">
                 <img
-                  src="https://picsum.photos/900/700?random=12"
+                  src={howItWorksImage}
                   alt="AI trading workflow placeholder"
                   className="h-80 w-full rounded-3xl object-cover sm:h-105"
                 />
@@ -562,7 +566,7 @@ const Home = () => {
 
                   <div className="mt-8 overflow-hidden rounded-4xl border border-border bg-bg-card p-3">
                     <img
-                      src="https://picsum.photos/900/700?random=13"
+                      src={mvAIImage}
                       alt="Why traders are moving to AI placeholder"
                       className="h-75 w-full rounded-3xl object-cover sm:h-95"
                     />

@@ -1,6 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 
+import howItWorksImage from "@/assets/HowItWorks.webp";
+import stocksImage from "@/assets/stocks.webp";
+import forexImage from "@/assets/forex.webp";
+import commoditiesImage from "@/assets/commodities.webp";
+import cryptoImage from "@/assets/crypto.webp";
+import indicesImage from "@/assets/indices.webp";
+
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import AnimatedContent from "@/components/ui/AnimatedContent";
@@ -21,7 +28,7 @@ const MarketsPage = () => {
       heroLabel: "Stocks",
       title: "Trade Stocks With PrimeProX",
       shiny: "Trade Stocks, Seize Opportunities",
-      image: "https://picsum.photos/1200/900?random=101",
+      image: stocksImage,
       paragraphs: [
         "Select from over 2,500 stock and fractional share CFDs, and trade your preferred companies with no commission fees! Our platform is your gateway to a world of financial opportunities, offering a seamless and user-friendly experience.",
         "Whether you’re a seasoned investor or just starting, our commitment to innovation and customer satisfaction ensures a trading environment that empowers you to navigate the complexities of global markets. Join us today and elevate your stock trading experience with confidence.",
@@ -46,7 +53,7 @@ const MarketsPage = () => {
       heroLabel: "Forex",
       title: "Trade Forex With PrimeProX",
       shiny: "Explore Global Markets, Trade Forex.",
-      image: "https://picsum.photos/1200/900?random=102",
+      image: forexImage,
       paragraphs: [
         "Get ready with your hat and sunscreen as we embark on a global journey through the realm of forex! Select from over 50 currency pairs, encompassing majors, minors, and exotic options.",
         "Forex is a world of its own, full of techniques and terminologies unique to the market. It’s also the most liquid, meaning there is lots of buying and selling activity happening much of the time. Because it’s so liquid, you can buy and sell easily and instantaneously!",
@@ -71,7 +78,7 @@ const MarketsPage = () => {
       heroLabel: "Commodities",
       title: "Trade Commodities With PrimeProX",
       shiny: "Trade Commodities, Maximize Returns",
-      image: "https://picsum.photos/1200/900?random=103",
+      image: commoditiesImage,
       paragraphs: [
         "Welcome to the exciting world of commodities trading with us! As a leading trading platform, we offer you an unparalleled opportunity to engage in the dynamic and diverse realm of commodities markets.",
         "Trade on the world’s most important commodities. Whether it’s key energy products like crude oil, industrial metals like copper and aluminum, or gold and silver, the most enduring stores of value and mediums of exchange.",
@@ -97,7 +104,7 @@ const MarketsPage = () => {
       heroLabel: "Cryptocurrency",
       title: "Trade Cryptocurrency With PrimeProX",
       shiny: "Digital Assets, Trade Confidently",
-      image: "https://picsum.photos/1200/900?random=104",
+      image: cryptoImage,
       paragraphs: [
         "Get into the world’s most revolutionary financial market, access the best cryptocurrency to invest in, and start investing in Crypto with PrimeProX – a globally trusted and regulated financial service provider.",
         "Our platform provides seamless access to a diverse range of cryptocurrencies, including established giants like Bitcoin and Ethereum, as well as promising altcoins.",
@@ -122,7 +129,7 @@ const MarketsPage = () => {
       heroLabel: "Indices",
       title: "Trade Indices With PrimeProX",
       shiny: "Trade Indices, Capture Markets",
-      image: "https://picsum.photos/1200/900?random=105",
+      image: indicesImage,
       paragraphs: [
         "Welcome to our premier indices trading platform, where the global financial markets come alive at your fingertips.",
         "Our platform provides you with seamless access to a diverse range of indices, including major benchmarks like the S&P 500, Dow Jones, and NASDAQ, as well as international indices representing markets worldwide.",
@@ -482,7 +489,7 @@ const MarketsPage = () => {
             >
               <div className="relative overflow-hidden rounded-4xl border border-border bg-bg-card p-3">
                 <img
-                  src={activeMarket.image}
+                  src={howItWorksImage}
                   alt={`${activeMarket.label} workflow`}
                   className="h-80 w-full rounded-3xl object-cover sm:h-104"
                 />

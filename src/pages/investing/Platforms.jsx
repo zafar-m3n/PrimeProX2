@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import platformsImage from "@/assets/platforms.webp";
+import mt5WebImage from "@/assets/mt5web.webp";
+import mt5MobileImage from "@/assets/mt5mobile.webp";
+import webTraderImage from "@/assets/webtrader.webp";
+
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import AnimatedContent from "@/components/ui/AnimatedContent";
@@ -24,7 +29,7 @@ const Platforms = () => {
         "Algorithmic trading support",
         "Access to trading robots and indicators",
       ],
-      image: "https://picsum.photos/1200/900?random=401",
+      image: mt5WebImage,
       badge: "Desktop Platform",
       ctaType: "download",
     },
@@ -38,7 +43,7 @@ const Platforms = () => {
         "Real-time notifications",
         "Available for Android & iOS",
       ],
-      image: "https://picsum.photos/1200/900?random=402",
+      image: mt5MobileImage,
       badge: "Mobile Platform",
       ctaType: "store",
     },
@@ -52,7 +57,7 @@ const Platforms = () => {
         "Advanced analysis tools",
         "Secure execution capabilities",
       ],
-      image: "https://picsum.photos/1200/900?random=403",
+      image: webTraderImage,
       badge: "Browser Platform",
       ctaType: "web",
     },
@@ -153,7 +158,7 @@ const Platforms = () => {
                 <div className="space-y-6">
                   <div className="gradient-border relative overflow-hidden rounded-4xl p-3">
                     <img
-                      src="https://picsum.photos/1200/900?random=404"
+                      src={platformsImage}
                       alt="PrimeProX platforms"
                       className="h-80 w-full rounded-3xl object-cover sm:h-112"
                     />

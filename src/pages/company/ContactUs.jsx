@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import contactImage from "@/assets/contact.webp";
+
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import AnimatedContent from "@/components/ui/AnimatedContent";
@@ -184,11 +186,7 @@ const ContactUs = () => {
                   </p>
 
                   <div className="mt-8 overflow-hidden rounded-4xl border border-primary/20 bg-linear-to-br from-bg-elevated to-bg-card glow-cyan">
-                    <img
-                      src="https://picsum.photos/700/500?random=85"
-                      alt="PrimeProX support team placeholder"
-                      className="h-56 w-full object-cover"
-                    />
+                    <img src={contactImage} alt="PrimeProX support team" className="h-56 w-full object-cover" />
 
                     <div className="p-6">
                       <div className="space-y-4">

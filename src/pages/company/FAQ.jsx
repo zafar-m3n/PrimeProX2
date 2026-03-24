@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import faqImage from "@/assets/faq.webp";
+
 import Button from "@/components/ui/Button";
 import Icon from "@/components/ui/Icon";
 import AnimatedContent from "@/components/ui/AnimatedContent";
@@ -154,7 +156,7 @@ const FAQ = () => {
               >
                 <div className="gradient-border relative overflow-hidden rounded-4xl p-3">
                   <img
-                    src="https://picsum.photos/900/700?random=41"
+                    src={faqImage}
                     alt="PrimeProX FAQ placeholder"
                     className="h-80 w-full rounded-3xl object-cover sm:h-120"
                   />
