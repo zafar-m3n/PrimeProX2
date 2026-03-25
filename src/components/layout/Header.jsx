@@ -16,7 +16,6 @@ const Header = () => {
     { name: "Account Types", path: "/investing/account-types" },
     { name: "Deposits & Withdrawals", path: "/investing/deposits-withdrawals" },
     { name: "Platforms", path: "/investing/platforms" },
-    { name: "Promotions", path: "/investing/promotions" },
   ];
 
   const companyLinks = [
@@ -76,7 +75,7 @@ const Header = () => {
       active ? "bg-primary/10 text-primary" : "text-text-primary hover:bg-bg-elevated hover:text-primary"
     }`;
 
-  const quantumAiBadge = (
+  const autoWealthAiBadge = (
     <span className="ml-2 inline-flex items-center rounded-full border border-primary/25 bg-primary px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-bg-main shadow-lg shadow-primary/20">
       New
     </span>
@@ -147,8 +146,12 @@ const Header = () => {
             {renderDesktopDropdown("investing", "Investing", investingLinks)}
 
             <Link to="/quantum-ai" className={`${desktopLinkClass(isActive("/quantum-ai"))} gap-2`}>
-              <span>Quantum AI</span>
-              {quantumAiBadge}
+              <span>AutoWealth AI</span>
+              {autoWealthAiBadge}
+            </Link>
+
+            <Link to="/investing/promotions" className={desktopLinkClass(isActive("/investing/promotions"))}>
+              Promotions
             </Link>
 
             <Link to="/markets" className={desktopLinkClass(isActive("/markets"))}>
@@ -230,10 +233,18 @@ const Header = () => {
             className={`${mobileLinkClass(isActive("/quantum-ai"))} flex items-center justify-between`}
             onClick={() => setMobileMenuOpen(false)}
           >
-            <span>Quantum AI</span>
+            <span>AutoWealth AI</span>
             <span className="inline-flex items-center rounded-full border border-primary/25 bg-primary px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.16em] text-bg-main shadow-lg shadow-primary/20">
               New
             </span>
+          </Link>
+
+          <Link
+            to="/investing/promotions"
+            className={mobileLinkClass(isActive("/investing/promotions"))}
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            Promotions
           </Link>
 
           <Link
