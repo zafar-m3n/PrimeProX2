@@ -11,7 +11,7 @@ const TradingViewWidget = () => {
         { proName: "FOREXCOM:SPXUSD", title: "S&P 500 Index" },
         { proName: "FX_IDC:EURUSD", title: "EUR to USD" },
         { proName: "BITSTAMP:BTCUSD", title: "Bitcoin" },
-        { proName: "BITSTAMP:ETHUSD", title: "Ethereum" },
+        // { proName: "BITSTAMP:ETHUSD", title: "Ethereum" },
         { description: "Gold", proName: "CAPITALCOM:GOLD" },
         { description: "Silver", proName: "CAPITALCOM:SILVER" },
         { description: "GBP to USD", proName: "OANDA:GBPUSD" },
