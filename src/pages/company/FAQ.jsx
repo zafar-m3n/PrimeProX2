@@ -285,7 +285,12 @@ const FAQ = () => {
               </p>
 
               <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-                <Button className="px-8 py-3">Get Started Now</Button>
+                <Button
+                  className="px-8 py-3"
+                  onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
+                >
+                  Get Started Now
+                </Button>
                 <Button variant="outline" className="px-8 py-3">
                   Explore Quantum AI
                 </Button>

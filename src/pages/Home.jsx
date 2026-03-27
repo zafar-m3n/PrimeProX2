@@ -806,7 +806,12 @@ const Home = () => {
               </p>
 
               <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-                <Button className="px-8 py-3">Get Started</Button>
+                <Button
+                  className="shadow-lg shadow-primary/20"
+                  onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
+                >
+                  Get Started
+                </Button>
 
                 <Link to="/quantum-ai">
                   <Button variant="outline" className="px-8 py-3">

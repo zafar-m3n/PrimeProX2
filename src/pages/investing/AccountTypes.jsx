@@ -383,7 +383,12 @@ const AccountTypes = () => {
                     </div>
 
                     <div className="mt-6">
-                      <Button className="w-full py-3">{account.cta}</Button>
+                      <Button
+                        className="shadow-lg shadow-primary/20"
+                        onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
+                      >
+                        {account.cta}
+                      </Button>
                     </div>
                   </div>
                 </AnimatedContent>

@@ -274,7 +274,12 @@ const QuantumAI = () => {
                   </p>
 
                   <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                    <Button className="px-8 py-3">Get Started Today</Button>
+                    <Button
+                      className="shadow-lg shadow-primary/20"
+                      onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
+                    >
+                      Get Started Today
+                    </Button>
                     <Button variant="outline" className="px-8 py-3">
                       Explore AI Systems
                     </Button>
@@ -739,7 +744,11 @@ const QuantumAI = () => {
                         </ul>
 
                         <div className="mt-auto pt-6">
-                          <Button className="w-full" variant={pkg.popular ? "primary" : "outline"}>
+                          <Button
+                            className="w-full"
+                            variant={pkg.popular ? "primary" : "outline"}
+                            onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
+                          >
                             Select System
                           </Button>
                         </div>
@@ -777,7 +786,12 @@ const QuantumAI = () => {
               </p>
 
               <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-                <Button className="px-8 py-3">Get Started Today</Button>
+                <Button
+                  className="shadow-lg shadow-primary/20"
+                  onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
+                >
+                  Get Started Today
+                </Button>
                 <Button variant="outline" className="px-8 py-3">
                   Explore AI Systems
                 </Button>

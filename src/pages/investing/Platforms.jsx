@@ -259,7 +259,10 @@ const Platforms = () => {
                           )}
 
                           {index === 2 && (
-                            <Button className="px-8 py-3">
+                            <Button
+                              className="shadow-lg shadow-primary/20"
+                              onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
+                            >
                               <span className="inline-flex items-center gap-2">
                                 <span>Launch WebTrader</span>
                                 <Icon icon="mdi:open-in-new" width={16} height={16} />

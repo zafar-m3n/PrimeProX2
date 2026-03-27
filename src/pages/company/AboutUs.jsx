@@ -427,7 +427,12 @@ const AboutUs = () => {
               </p>
 
               <div className="mt-8 flex justify-center">
-                <Button className="px-8 py-3">Get Started Now</Button>
+                <Button
+                  className="px-8 py-3"
+                  onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
+                >
+                  Get Started Now
+                </Button>
               </div>
             </div>
           </AnimatedContent>

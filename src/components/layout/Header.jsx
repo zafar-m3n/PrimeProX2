@@ -156,9 +156,16 @@ const Header = () => {
           </nav>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <Button variant="outline">Sign In</Button>
+            <Button variant="outline" onClick={() => window.open("https://portal.primeprox.com/login", "_blank")}>
+              Sign In
+            </Button>
 
-            <Button className="shadow-lg shadow-primary/20">Get Started</Button>
+            <Button
+              className="shadow-lg shadow-primary/20"
+              onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
+            >
+              Get Started
+            </Button>
           </div>
 
           <button
