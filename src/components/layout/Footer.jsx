@@ -108,6 +108,37 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+        <div className="container mx-auto text-justify text-gray-400 pt-8">
+          <p>
+            <span className="font-bold">Risk Warning: </span>
+            Our services involve trading in complex financial instruments that carry a high level of risk and may not be
+            suitable for all investors. You could lose all your invested capital. Please ensure you fully understand the
+            risks involved, consider your level of experience, and seek independent financial advice if necessary. Past
+            performance does not guarantee future results.
+          </p>
+          <br />
+          <p>
+            Zipphy is proud to be a certified broker, duly licensed and regulated by
+            <strong> CFS-ZIPP LIMITED</strong>. Our company number is{" "}
+            <span className="text-primary hover:underline cursor-pointer">03925386</span>, reflecting our commitment to
+            maintaining the highest standards of financial integrity and transparency. Our registration address is{" "}
+            <span className="italic">790 Uxbridge Road, Hayes, Middlesex, England, UB4 0RS.</span>
+          </p>
+
+          <p>
+            We are also regulated under <strong>ZipMoney Securities Ltd </strong>(
+            <span className="text-primary hover:underline cursor-pointer">Licence No. 222040</span>, ABN: 17 082 380
+            023, ACN: 082 380 023), with the registation address:{" "}
+            <span className="italic">L7 180 GEORGE ST SYDNEY NSW 2000.</span>
+          </p>
+
+          <p>
+            In addition, our server operations are regulated under <strong>Fiz Consultants Limited </strong>(
+            <span className="text-primary hover:underline cursor-pointer">Company No. 06145674</span>
+            ), which is registered at the address{" "}
+            <span className="italic">17 Holly Drive, Minster On Sea, Sheerness, Kent, ME12 3GR</span>
+          </p>
+        </div>
         <div className="flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="text-center text-sm text-text-dimmed md:text-left">
             &copy; {currentYear} PrimeProX. All rights reserved.

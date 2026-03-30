@@ -5,6 +5,7 @@ import AnimatedContent from "@/components/ui/AnimatedContent";
 import ShinyText from "@/components/ui/ShinyText";
 import Spotlight from "@/components/ui/Spotlight";
 import TextGenerateEffect from "@/components/ui/TextGenerateEffect";
+import mvai from "@/assets/mvai.webp";
 
 const QuantumAI = () => {
   useEffect(() => {
@@ -301,38 +302,41 @@ const QuantumAI = () => {
                 reverse={false}
                 config={{ tension: 55, friction: 24 }}
               >
-                <div className="relative overflow-hidden rounded-4xl border border-primary/20 bg-linear-to-br from-bg-card via-bg-elevated to-bg-card p-6 glow-cyan">
+                <div className="relative overflow-hidden rounded-4xl border border-primary/20 bg-linear-to-br from-bg-card via-bg-elevated to-bg-card p-4 sm:p-5 glow-cyan">
                   <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,212,255,0.15),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(14,165,233,0.12),transparent_30%)]" />
+
                   <div className="relative z-10">
-                    <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-3xl bg-primary/10">
-                      <Icon icon="mdi:brain" width={34} height={34} className="text-primary" />
+                    <div className="mb-4 flex items-center gap-3">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-primary/10">
+                        <Icon icon="mdi:brain" width={30} height={30} className="text-primary" />
+                      </div>
+
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">AI Overview</p>
+                        <h4 className="mt-1 text-lg font-semibold text-text-primary">Live Market Intelligence</h4>
+                      </div>
                     </div>
 
-                    <div className="space-y-4">
-                      <div className="rounded-2xl border border-border bg-bg-main/50 p-4">
+                    <div className="overflow-hidden rounded-3xl border border-primary/20 bg-bg-main/40">
+                      <img
+                        src={mvai}
+                        alt="AI market analysis visual"
+                        className="h-56 w-full object-contain sm:h-64"
+                      />
+                    </div>
+
+                    <div className="mt-4 grid grid-cols-1 gap-3">
+                      <div className="rounded-2xl border border-border-hover bg-bg-main/50 p-4">
                         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">AI Capability</p>
                         <p className="mt-2 text-sm leading-7 text-text-muted">
-                          Designed to analyze financial markets, identify trading opportunities, and execute trades with
-                          speed and precision.
+                          Analyzes market activity in real time and identifies potential trading opportunities.
                         </p>
                       </div>
 
-                      <div className="rounded-2xl border border-border bg-bg-main/50 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                          Live Intelligence
-                        </p>
+                      <div className="rounded-2xl border border-border-hover bg-bg-main/50 p-4">
+                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Core Stack</p>
                         <p className="mt-2 text-sm leading-7 text-text-muted">
-                          Continuously monitors global markets to detect patterns, price movements, and trading signals
-                          that may indicate profitable opportunities.
-                        </p>
-                      </div>
-
-                      <div className="rounded-2xl border border-border bg-bg-main/50 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                          Technology Stack
-                        </p>
-                        <p className="mt-2 text-sm leading-7 text-text-muted">
-                          Machine learning algorithms, real-time data processing, and automated execution systems.
+                          Machine learning, real-time processing, and automated execution working together.
                         </p>
                       </div>
                     </div>
@@ -650,107 +654,180 @@ const QuantumAI = () => {
                 config={{ tension: 55, friction: 24 }}
               >
                 <div
-                  className={`relative overflow-hidden rounded-4xl border p-5 sm:p-6 transition-smooth ${
-                    pkg.popular
-                      ? "border-primary/40 bg-linear-to-br from-bg-elevated via-bg-card to-bg-elevated glow-cyan"
-                      : "border-border bg-linear-to-br from-bg-elevated to-bg-card hover:border-primary/30"
+                  className={`group relative overflow-hidden rounded-4xl p-0.5 transition-smooth hover:scale-[1.015] ${
+                    pkg.popular ? "glow-cyan-lg" : "hover:glow-cyan"
                   }`}
                 >
+                  <div
+                    className={`absolute inset-0 rounded-4xl ${
+                      pkg.popular
+                        ? "bg-linear-to-r from-primary via-secondary to-primary opacity-100"
+                        : "bg-linear-to-r from-primary/75 via-secondary/55 to-primary/75 opacity-80 group-hover:opacity-100"
+                    }`}
+                  />
+
                   {pkg.popular && (
-                    <div className="absolute right-4 top-4 z-10">
-                      <div className="rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
-                        Most Popular
-                      </div>
-                    </div>
+                    <>
+                      <div className="pointer-events-none absolute -left-16 top-0 h-32 w-32 rounded-full bg-primary/25 blur-3xl" />
+                      <div className="pointer-events-none absolute -right-10 bottom-0 h-36 w-36 rounded-full bg-secondary/25 blur-3xl" />
+                    </>
                   )}
 
-                  <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:items-center">
-                    {/* Left */}
-                    <div className="lg:col-span-3">
-                      <div className="rounded-3xl border border-border bg-bg-main/40 p-5">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">AI System</p>
-                        <h3 className="mt-3 text-2xl font-bold">{pkg.name}</h3>
-                        <p className="mt-2 text-sm text-text-dimmed">{pkg.subtitle}</p>
+                  <div
+                    className={`relative rounded-4xl p-5 sm:p-6 ${
+                      pkg.popular
+                        ? "bg-[linear-gradient(135deg,rgba(26,35,66,0.98),rgba(20,27,53,0.96),rgba(26,35,66,0.98))] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05),0_0_0_1px_rgba(0,212,255,0.08)]"
+                        : "bg-[linear-gradient(135deg,rgba(26,35,66,0.96),rgba(20,27,53,0.96))] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
+                    }`}
+                  >
+                    {pkg.popular && (
+                      <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-linear-to-r from-transparent via-white/40 to-transparent" />
+                    )}
 
-                        <div className="mt-6 space-y-3">
-                          <div className="rounded-2xl border border-primary/20 bg-primary/8 p-4">
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
-                              Capital Requirement
-                            </p>
-                            <p className="mt-2 text-3xl font-bold text-primary">{pkg.capital}</p>
-                          </div>
-
-                          <div className="rounded-2xl border border-border bg-bg-card p-4">
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
-                              Estimated Performance
-                            </p>
-                            <p className="mt-2 text-lg font-bold text-primary">{pkg.performance}</p>
-                          </div>
+                    {pkg.popular && (
+                      <div className="absolute right-4 top-4 z-10">
+                        <div className="rounded-full border border-primary/40 bg-[linear-gradient(135deg,rgba(0,212,255,0.18),rgba(14,165,233,0.14))] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary shadow-[0_0_20px_rgba(0,212,255,0.18)] backdrop-blur-md">
+                          Most Popular
                         </div>
                       </div>
-                    </div>
+                    )}
 
-                    {/* Middle */}
-                    <div className="lg:col-span-6">
-                      <div className="rounded-3xl border border-border bg-bg-main/30 p-5">
-                        <p className="text-sm leading-7 text-text-muted">{pkg.description}</p>
+                    <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:items-center">
+                      {/* Left */}
+                      <div className="lg:col-span-3">
+                        <div
+                          className={`rounded-3xl p-5 ${
+                            pkg.popular
+                              ? "border border-primary/25 bg-bg-main/50 shadow-[inset_0_0_0_1px_rgba(0,212,255,0.05)]"
+                              : "border border-border-hover bg-bg-main/40"
+                          }`}
+                        >
+                          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">AI System</p>
+                          <h3 className="mt-3 text-2xl font-bold">{pkg.name}</h3>
+                          <p className="mt-2 text-sm text-text-dimmed">{pkg.subtitle}</p>
 
-                        <div className="mt-5 flex flex-wrap gap-2">
-                          {pkg.markets.map((market, i) => (
-                            <span
-                              key={i}
-                              className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                          <div className="mt-6 space-y-3">
+                            <div
+                              className={`rounded-2xl p-4 ${
+                                pkg.popular
+                                  ? "border border-primary/30 bg-primary/10 shadow-[0_0_20px_rgba(0,212,255,0.08)]"
+                                  : "border border-primary/20 bg-primary/8"
+                              }`}
                             >
-                              {market}
-                            </span>
-                          ))}
-                        </div>
+                              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
+                                Capital Requirement
+                              </p>
+                              <p className="mt-2 text-3xl font-bold text-primary">{pkg.capital}</p>
+                            </div>
 
-                        <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                          <div className="rounded-2xl border border-border bg-bg-card p-4">
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
-                              Cycle Duration
-                            </p>
-                            <p className="mt-2 text-sm font-semibold text-text-primary">{pkg.cycle}</p>
-                          </div>
-
-                          <div className="rounded-2xl border border-border bg-bg-card p-4">
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
-                              Markets Covered
-                            </p>
-                            <p className="mt-2 text-sm font-semibold text-text-primary">{pkg.markets.length} Markets</p>
+                            <div
+                              className={`rounded-2xl p-4 ${
+                                pkg.popular
+                                  ? "border border-primary/20 bg-bg-card shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
+                                  : "border border-border-hover bg-bg-card"
+                              }`}
+                            >
+                              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
+                                Estimated Performance
+                              </p>
+                              <p className="mt-2 text-lg font-bold text-primary">{pkg.performance}</p>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
 
-                    {/* Right */}
-                    <div className="lg:col-span-3">
-                      <div className="flex h-full flex-col rounded-3xl border border-border bg-bg-main/40 p-5">
-                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Key Features</p>
+                      {/* Middle */}
+                      <div className="lg:col-span-6">
+                        <div
+                          className={`rounded-3xl p-5 ${
+                            pkg.popular
+                              ? "border border-primary/20 bg-bg-main/40 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
+                              : "border border-border-hover bg-bg-main/30"
+                          }`}
+                        >
+                          <p className="text-sm leading-7 text-text-muted">{pkg.description}</p>
 
-                        <ul className="mt-4 space-y-2">
-                          {pkg.features.map((feature, i) => (
-                            <li key={i} className="flex items-start gap-2 text-sm text-text-muted">
-                              <Icon
-                                icon="mdi:check-circle"
-                                width={16}
-                                height={16}
-                                className="mt-1 shrink-0 text-primary"
-                              />
-                              <span>{feature}</span>
-                            </li>
-                          ))}
-                        </ul>
+                          <div className="mt-5 flex flex-wrap gap-2">
+                            {pkg.markets.map((market, i) => (
+                              <span
+                                key={i}
+                                className={`rounded-full px-3 py-1 text-xs font-medium ${
+                                  pkg.popular
+                                    ? "border border-primary/30 bg-primary/12 text-primary shadow-[0_0_12px_rgba(0,212,255,0.08)]"
+                                    : "border border-primary/20 bg-primary/10 text-primary"
+                                }`}
+                              >
+                                {market}
+                              </span>
+                            ))}
+                          </div>
 
-                        <div className="mt-auto pt-6">
-                          <Button
-                            className="w-full"
-                            variant={pkg.popular ? "primary" : "outline"}
-                            onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
-                          >
-                            Select System
-                          </Button>
+                          <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                            <div
+                              className={`rounded-2xl p-4 ${
+                                pkg.popular
+                                  ? "border border-primary/20 bg-bg-card shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
+                                  : "border border-border-hover bg-bg-card"
+                              }`}
+                            >
+                              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
+                                Cycle Duration
+                              </p>
+                              <p className="mt-2 text-sm font-semibold text-text-primary">{pkg.cycle}</p>
+                            </div>
+
+                            <div
+                              className={`rounded-2xl p-4 ${
+                                pkg.popular
+                                  ? "border border-primary/20 bg-bg-card shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
+                                  : "border border-border-hover bg-bg-card"
+                              }`}
+                            >
+                              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
+                                Markets Covered
+                              </p>
+                              <p className="mt-2 text-sm font-semibold text-text-primary">
+                                {pkg.markets.length} Markets
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Right */}
+                      <div className="lg:col-span-3">
+                        <div
+                          className={`flex h-full flex-col rounded-3xl p-5 ${
+                            pkg.popular
+                              ? "border border-primary/25 bg-bg-main/50 shadow-[inset_0_0_0_1px_rgba(0,212,255,0.05)]"
+                              : "border border-border-hover bg-bg-main/40"
+                          }`}
+                        >
+                          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Key Features</p>
+
+                          <ul className="mt-4 space-y-2">
+                            {pkg.features.map((feature, i) => (
+                              <li key={i} className="flex items-start gap-2 text-sm text-text-muted">
+                                <Icon
+                                  icon="mdi:check-circle"
+                                  width={16}
+                                  height={16}
+                                  className="mt-1 shrink-0 text-primary"
+                                />
+                                <span>{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+
+                          <div className="mt-auto pt-6">
+                            <Button
+                              className={`w-full ${pkg.popular ? "shadow-lg shadow-primary/20" : ""}`}
+                              variant={pkg.popular ? "primary" : "outline"}
+                              onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
+                            >
+                              Select System
+                            </Button>
+                          </div>
                         </div>
                       </div>
                     </div>
