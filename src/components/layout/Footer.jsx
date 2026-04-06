@@ -119,10 +119,17 @@ const Footer = () => {
           <br />
           <p>
             PrimeProX is proud to be a certified broker, duly licensed and regulated by
-            <strong> CFS-ZIPP LIMITED</strong>. Our company number is{" "}
-            <span className="text-primary hover:underline cursor-pointer">03925386</span>, reflecting our commitment to
-            maintaining the highest standards of financial integrity and transparency. Our registration address is{" "}
-            <span className="italic">790 Uxbridge Road, Hayes, Middlesex, England, UB4 0RS.</span>
+            <strong> PRIMEPROX LIMITED</strong>. Our company number is{" "}
+            <a
+              href="https://find-and-update.company-information.service.gov.uk/company/06792170"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline cursor-pointer"
+            >
+              06792170
+            </a>
+            , reflecting our commitment to maintaining the highest standards of financial integrity and transparency.
+            Our registration address is <span className="italic">16 Canmore Gardens, London, England, SW16 5BE.</span>
           </p>
 
           <p>

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import Icon from "../ui/Icon";
 import Button from "../ui/Button";
 import logoHorizontal from "@/assets/logoHorizontal.png";
+import experienceBadge from "@/assets/experience.jpeg";
 
 const INVESTING_LINKS = [
   { name: "Account Types", path: "/investing/account-types" },
@@ -26,6 +27,16 @@ const AUTO_WEALTH_BADGE = (
     New
   </span>
 );
+
+const TRUST_POINTS_LEFT = [
+  { icon: "mdi:lock-outline", text: "Secure Client Portal" },
+  { icon: "mdi:chart-timeline-variant", text: "Advanced Trading Tools" },
+];
+
+const TRUST_POINTS_RIGHT = [
+  { icon: "mdi:cash-fast", text: "Fast Withdrawals" },
+  { icon: "mdi:earth", text: "Global Market Access" },
+];
 
 const Header = () => {
   const location = useLocation();
@@ -207,110 +218,141 @@ const Header = () => {
     );
   };
 
+  const renderTrustText = (items, align = "left") => (
+    <div className={`flex flex-wrap items-center gap-x-6 gap-y-2 ${align === "right" ? "justify-end" : ""}`}>
+      {items.map((item) => (
+        <div key={item.text} className="inline-flex items-center gap-2 text-sm text-text-primary">
+          <Icon icon={item.icon} width={16} height={16} className="text-primary" />
+          <span className="font-medium">{item.text}</span>
+        </div>
+      ))}
+    </div>
+  );
+
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-bg-card/95 backdrop-blur-xl">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between gap-4">
-          <Link to="/" className="flex items-center">
-            <img
-              src={logoHorizontal}
-              alt="PrimeProX AI Trading Platform"
-              className="h-12 w-auto object-contain"
-              loading="eager"
-            />
-          </Link>
+    <>
+      <div className="border-b border-border bg-bg-main">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="hidden items-center gap-6 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+            <div>{renderTrustText(TRUST_POINTS_LEFT, "left")}</div>
 
-          <nav className="hidden items-center gap-8 lg:flex" aria-label="Desktop navigation">
-            <Link to="/" className={desktopLinkClass(isActivePath("/"))}>
-              Home
-            </Link>
+            <div className="flex justify-center px-4">
+              <img src={experienceBadge} alt="17+ Years Market Experience" className="h-20 w-auto object-contain" />
+            </div>
 
-            {renderDesktopDropdown("investing", "Investing", INVESTING_LINKS)}
-
-            <Link to="/quantum-ai" className={`${desktopLinkClass(isActivePath("/quantum-ai"))} gap-2`}>
-              <span>AutoWealth AI</span>
-              {AUTO_WEALTH_BADGE}
-            </Link>
-
-            <Link to="/investing/promotions" className={desktopLinkClass(isActivePath("/investing/promotions"))}>
-              Promotions
-            </Link>
-
-            <Link to="/markets" className={desktopLinkClass(isActivePath("/markets"))}>
-              Markets
-            </Link>
-
-            {renderDesktopDropdown("company", "Company", COMPANY_LINKS)}
-          </nav>
-
-          <div className="hidden items-center gap-3 lg:flex">
-            <Button variant="outline" onClick={() => openExternalLink(EXTERNAL_LINKS.signIn)}>
-              Sign In
-            </Button>
-
-            <Button className="shadow-lg shadow-primary/20" onClick={() => openExternalLink(EXTERNAL_LINKS.register)}>
-              Get Started
-            </Button>
+            <div>{renderTrustText(TRUST_POINTS_RIGHT, "right")}</div>
           </div>
 
-          <button
-            type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-bg-elevated text-text-primary transition-smooth hover:border-border-hover hover:text-primary lg:hidden"
-            onClick={toggleMobileMenu}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileMenuOpen}
-            aria-controls="mobile-navigation"
-          >
-            <Icon icon={mobileMenuOpen ? "mdi:close" : "mdi:menu"} width={24} height={24} />
-          </button>
+          <div className="flex items-center justify-center lg:hidden">
+            <img src={experienceBadge} alt="17+ Years Market Experience" className="h-20 w-auto object-contain" />
+          </div>
         </div>
+      </div>
 
-        <div
-          id="mobile-navigation"
-          className={`overflow-hidden transition-all duration-300 ease-out lg:hidden ${
-            mobileMenuOpen ? "max-h-[80vh] pb-4 opacity-100" : "max-h-0 pb-0 opacity-0"
-          }`}
-        >
-          <nav className="space-y-2 border-t border-border pt-4" aria-label="Mobile navigation">
-            <Link to="/" className={mobileLinkClass(isActivePath("/"))}>
-              Home
+      <header className="sticky top-0 z-50 border-b border-border bg-bg-card/95 backdrop-blur-xl">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex h-20 items-center justify-between gap-4">
+            <Link to="/" className="flex items-center">
+              <img
+                src={logoHorizontal}
+                alt="PrimeProX AI Trading Platform"
+                className="h-12 w-auto object-contain"
+                loading="eager"
+              />
             </Link>
 
-            {renderMobileDropdown("investing", "Investing", INVESTING_LINKS)}
+            <nav className="hidden items-center gap-8 lg:flex" aria-label="Desktop navigation">
+              <Link to="/" className={desktopLinkClass(isActivePath("/"))}>
+                Home
+              </Link>
 
-            <Link to="/quantum-ai" className={mobileLinkClass(isActivePath("/quantum-ai"))}>
-              <span className="inline-flex items-center">
-                AutoWealth AI
+              {renderDesktopDropdown("investing", "Investing", INVESTING_LINKS)}
+
+              <Link to="/quantum-ai" className={`${desktopLinkClass(isActivePath("/quantum-ai"))} gap-2`}>
+                <span>AutoWealth AI</span>
                 {AUTO_WEALTH_BADGE}
-              </span>
-            </Link>
+              </Link>
 
-            <Link to="/investing/promotions" className={mobileLinkClass(isActivePath("/investing/promotions"))}>
-              Promotions
-            </Link>
+              <Link to="/investing/promotions" className={desktopLinkClass(isActivePath("/investing/promotions"))}>
+                Promotions
+              </Link>
 
-            <Link to="/markets" className={mobileLinkClass(isActivePath("/markets"))}>
-              Markets
-            </Link>
+              <Link to="/markets" className={desktopLinkClass(isActivePath("/markets"))}>
+                Markets
+              </Link>
 
-            {renderMobileDropdown("company", "Company", COMPANY_LINKS)}
+              {renderDesktopDropdown("company", "Company", COMPANY_LINKS)}
+            </nav>
 
-            <div className="grid grid-cols-1 gap-3 pt-3 sm:grid-cols-2">
-              <Button variant="outline" className="w-full" onClick={() => openExternalLink(EXTERNAL_LINKS.signIn)}>
+            <div className="hidden items-center gap-3 lg:flex">
+              <Button variant="outline" onClick={() => openExternalLink(EXTERNAL_LINKS.signIn)}>
                 Sign In
               </Button>
 
-              <Button
-                className="w-full shadow-lg shadow-primary/20"
-                onClick={() => openExternalLink(EXTERNAL_LINKS.register)}
-              >
+              <Button className="shadow-lg shadow-primary/20" onClick={() => openExternalLink(EXTERNAL_LINKS.register)}>
                 Get Started
               </Button>
             </div>
-          </nav>
+
+            <button
+              type="button"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-bg-elevated text-text-primary transition-smooth hover:border-border-hover hover:text-primary lg:hidden"
+              onClick={toggleMobileMenu}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation"
+            >
+              <Icon icon={mobileMenuOpen ? "mdi:close" : "mdi:menu"} width={24} height={24} />
+            </button>
+          </div>
+
+          <div
+            id="mobile-navigation"
+            className={`overflow-hidden transition-all duration-300 ease-out lg:hidden ${
+              mobileMenuOpen ? "max-h-[80vh] pb-4 opacity-100" : "max-h-0 pb-0 opacity-0"
+            }`}
+          >
+            <nav className="space-y-2 border-t border-border pt-4" aria-label="Mobile navigation">
+              <Link to="/" className={mobileLinkClass(isActivePath("/"))}>
+                Home
+              </Link>
+
+              {renderMobileDropdown("investing", "Investing", INVESTING_LINKS)}
+
+              <Link to="/quantum-ai" className={mobileLinkClass(isActivePath("/quantum-ai"))}>
+                <span className="inline-flex items-center">
+                  AutoWealth AI
+                  {AUTO_WEALTH_BADGE}
+                </span>
+              </Link>
+
+              <Link to="/investing/promotions" className={mobileLinkClass(isActivePath("/investing/promotions"))}>
+                Promotions
+              </Link>
+
+              <Link to="/markets" className={mobileLinkClass(isActivePath("/markets"))}>
+                Markets
+              </Link>
+
+              {renderMobileDropdown("company", "Company", COMPANY_LINKS)}
+
+              <div className="grid grid-cols-1 gap-3 pt-3 sm:grid-cols-2">
+                <Button variant="outline" className="w-full" onClick={() => openExternalLink(EXTERNAL_LINKS.signIn)}>
+                  Sign In
+                </Button>
+
+                <Button
+                  className="w-full shadow-lg shadow-primary/20"
+                  onClick={() => openExternalLink(EXTERNAL_LINKS.register)}
+                >
+                  Get Started
+                </Button>
+              </div>
+            </nav>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 
