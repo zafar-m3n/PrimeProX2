@@ -118,7 +118,7 @@ const Footer = () => {
           </p>
           <br />
           <p>
-            Zipphy is proud to be a certified broker, duly licensed and regulated by
+            PrimeProX is proud to be a certified broker, duly licensed and regulated by
             <strong> CFS-ZIPP LIMITED</strong>. Our company number is{" "}
             <span className="text-primary hover:underline cursor-pointer">03925386</span>, reflecting our commitment to
             maintaining the highest standards of financial integrity and transparency. Our registration address is{" "}
