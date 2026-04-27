@@ -12,7 +12,7 @@ const MainLayout = () => {
       <main className="grow">
         <Outlet />
       </main>
-      <WhatsAppButton />
+      {/* <WhatsAppButton /> */}
       <Footer />
     </div>
   );
