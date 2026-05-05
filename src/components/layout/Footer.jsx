@@ -108,6 +108,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
+
         <div className="container mx-auto text-justify text-gray-400 pt-8">
           <p>
             <span className="font-bold">Risk Warning: </span>
@@ -116,7 +117,40 @@ const Footer = () => {
             risks involved, consider your level of experience, and seek independent financial advice if necessary. Past
             performance does not guarantee future results.
           </p>
+
           <br />
+
+          <p>
+            PrimeProX is proudly associated with <strong>Prime Infrastructure Investments Limited</strong>. The company
+            number is{" "}
+            <a
+              href="https://find-and-update.company-information.service.gov.uk/company/09898330"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline cursor-pointer"
+            >
+              09898330
+            </a>
+            , with the registered office address{" "}
+            <span className="italic">
+              5 The Triangle, Wildwood Drive, Worcester, Worcestershire, United Kingdom, WR5 2QX.
+            </span>
+          </p>
+
+          <p>
+            We are also associated with <strong>Prime PLC</strong>. The company number is{" "}
+            <a
+              href="https://find-and-update.company-information.service.gov.uk/company/03432065"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline cursor-pointer"
+            >
+              03432065
+            </a>
+            , with the registered office address{" "}
+            <span className="italic">5 The Triangle, Wildwood Drive, Worcester, Worcestershire, WR5 2QX.</span>
+          </p>
+
           <p>
             PrimeProX is proud to be a certified broker, duly licensed and regulated by
             <strong> PRIMEPROX LIMITED</strong>. Our company number is{" "}
@@ -128,24 +162,10 @@ const Footer = () => {
             >
               06792170
             </a>
-            , reflecting our commitment to maintaining the highest standards of financial integrity and transparency.
-            Our registration address is <span className="italic">16 Canmore Gardens, London, England, SW16 5BE.</span>
-          </p>
-
-          <p>
-            We are also regulated under <strong>ZipMoney Securities Ltd </strong>(
-            <span className="text-primary hover:underline cursor-pointer">Licence No. 222040</span>, ABN: 17 082 380
-            023, ACN: 082 380 023), with the registation address:{" "}
-            <span className="italic">L7 180 GEORGE ST SYDNEY NSW 2000.</span>
-          </p>
-
-          <p>
-            In addition, our server operations are regulated under <strong>Fiz Consultants Limited </strong>(
-            <span className="text-primary hover:underline cursor-pointer">Company No. 06145674</span>
-            ), which is registered at the address{" "}
-            <span className="italic">17 Holly Drive, Minster On Sea, Sheerness, Kent, ME12 3GR</span>
+            , with the registered address <span className="italic">16 Canmore Gardens, London, England, SW16 5BE.</span>
           </p>
         </div>
+
         <div className="flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <p className="text-center text-sm text-text-dimmed md:text-left">
             &copy; {currentYear} PrimeProX. All rights reserved.
