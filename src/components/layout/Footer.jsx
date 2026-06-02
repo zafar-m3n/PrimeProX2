@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Icon from "../ui/Icon";
 
-// ✅ import logo
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -109,7 +108,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="container mx-auto text-justify text-gray-400 pt-8">
+        <div className="container mx-auto pt-8 text-justify text-gray-400">
           <p>
             <span className="font-bold">Risk Warning: </span>
             Our services involve trading in complex financial instruments that carry a high level of risk and may not be
@@ -121,13 +120,42 @@ const Footer = () => {
           <br />
 
           <p>
+            PrimeProX is associated with <strong>PALADIN WHOLESALE FUNDING PTY LIMITED</strong>, an Australian Private
+            Company incorporated in New South Wales, Australia. The Australian Business Number is{" "}
+            <a
+              href="https://abr.business.gov.au/ABN/View?abn=31098680623"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer text-primary hover:underline"
+            >
+              31 098 680 623
+            </a>
+            , with the main business location listed as <span className="italic">NSW 2061, Australia.</span>
+          </p>
+
+          <p>
+            PrimeProX is also associated with <strong>Premprop Finance Pty Limited</strong>, an Australian Private
+            Company incorporated in New South Wales, Australia. The Australian Business Number is{" "}
+            <a
+              href="https://abr.business.gov.au/ABN/View?abn=84146678695"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer text-primary hover:underline"
+            >
+              84 146 678 695
+            </a>
+            , with the main business location listed as{" "}
+            <span className="italic">Baulkham Hills, NSW 2088, Australia.</span>
+          </p>
+
+          <p>
             PrimeProX is proudly associated with <strong>Prime Infrastructure Investments Limited</strong>. The company
             number is{" "}
             <a
               href="https://find-and-update.company-information.service.gov.uk/company/09898330"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline cursor-pointer"
+              className="cursor-pointer text-primary hover:underline"
             >
               09898330
             </a>
@@ -143,7 +171,7 @@ const Footer = () => {
               href="https://find-and-update.company-information.service.gov.uk/company/03432065"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline cursor-pointer"
+              className="cursor-pointer text-primary hover:underline"
             >
               03432065
             </a>
@@ -152,13 +180,13 @@ const Footer = () => {
           </p>
 
           <p>
-            PrimeProX is proud to be a certified broker, duly licensed and regulated by
-            <strong> PRIMEPROX LIMITED</strong>. Our company number is{" "}
+            PrimeProX is proud to be a certified broker, duly licensed and regulated by{" "}
+            <strong>PRIMEPROX LIMITED</strong>. Our company number is{" "}
             <a
               href="https://find-and-update.company-information.service.gov.uk/company/06792170"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline cursor-pointer"
+              className="cursor-pointer text-primary hover:underline"
             >
               06792170
             </a>
