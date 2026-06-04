@@ -6,6 +6,7 @@ import AnimatedContent from "@/components/ui/AnimatedContent";
 import ShinyText from "@/components/ui/ShinyText";
 import Spotlight from "@/components/ui/Spotlight";
 import TextGenerateEffect from "@/components/ui/TextGenerateEffect";
+import AICommunityReport from "@/components/AICommunityReport";
 
 const Promotions = () => {
   useEffect(() => {
@@ -136,6 +137,8 @@ const Promotions = () => {
           </AnimatedContent>
         </div>
       </section>
+
+      <AICommunityReport />
 
       {/* India Special */}
       <section className="bg-bg-card py-16 sm:py-20">
