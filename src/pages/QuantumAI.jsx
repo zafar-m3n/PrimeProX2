@@ -107,6 +107,9 @@ const QuantumAI = () => {
       description:
         "Quantum Core is designed for individuals who want to experience automated trading powered by artificial intelligence. It provides access to basic AI-driven market analysis and automated trade execution.",
       capital: "$300",
+      hasDiscount: false,
+      discountPercentage: 0,
+      discountedCapital: null,
       markets: ["Forex"],
       cycle: "10 – 15 Minutes",
       features: [
@@ -124,6 +127,9 @@ const QuantumAI = () => {
       description:
         "Quantum Prime is one of our most popular AI trading systems, designed for traders who want access to multi-market analysis and advanced automated trading strategies.",
       capital: "$1,000",
+      hasDiscount: true,
+      discountPercentage: 50,
+      discountedCapital: "$500",
       markets: ["Forex", "Gold", "Cryptocurrency"],
       cycle: "15 – 20 Minutes",
       features: [
@@ -141,6 +147,9 @@ const QuantumAI = () => {
       description:
         "Quantum Edge introduces more advanced algorithmic trading capabilities, allowing the system to analyze multiple financial markets simultaneously and adapt to changing market conditions.",
       capital: "$2,500",
+      hasDiscount: true,
+      discountPercentage: 50,
+      discountedCapital: "$1,250",
       markets: ["Forex", "Gold", "Cryptocurrency", "Indices"],
       cycle: "15 – 25 Minutes",
       features: [
@@ -158,6 +167,9 @@ const QuantumAI = () => {
       description:
         "Quantum Elite is designed for traders who want access to more advanced AI trading models with deeper market analysis and optimized execution capabilities.",
       capital: "$5,000",
+      hasDiscount: true,
+      discountPercentage: 50,
+      discountedCapital: "$2,500",
       markets: ["Forex", "Gold", "Cryptocurrency", "Indices"],
       cycle: "20 – 30 Minutes",
       features: [
@@ -175,6 +187,9 @@ const QuantumAI = () => {
       description:
         "Quantum Institutional is built for investors looking for powerful AI trading systems capable of monitoring multiple global financial markets and executing advanced strategies.",
       capital: "$10,000",
+      hasDiscount: true,
+      discountPercentage: 50,
+      discountedCapital: "$5,000",
       markets: ["Forex", "Gold", "Cryptocurrency", "Indices", "Commodities"],
       cycle: "25 – 35 Minutes",
       features: [
@@ -192,6 +207,9 @@ const QuantumAI = () => {
       description:
         "Quantum Capital Pro is designed for serious investors seeking advanced AI-powered trading infrastructure with expanded market monitoring and enhanced trading strategies.",
       capital: "$25,000",
+      hasDiscount: true,
+      discountPercentage: 50,
+      discountedCapital: "$12,500",
       markets: ["Forex", "Gold", "Cryptocurrency", "Indices", "Commodities"],
       cycle: "30 – 40 Minutes",
       features: [
@@ -209,6 +227,9 @@ const QuantumAI = () => {
       description:
         "Quantum Sovereign represents the highest level of our AI trading technology, built for large investors seeking powerful automated trading systems with global market intelligence.",
       capital: "$50,000",
+      hasDiscount: true,
+      discountPercentage: 50,
+      discountedCapital: "$25,000",
       markets: ["Forex", "Cryptocurrency", "Gold", "Indices", "Commodities", "Global Stocks"],
       cycle: "30 – 45 Minutes",
       features: [
@@ -318,11 +339,7 @@ const QuantumAI = () => {
                     </div>
 
                     <div className="overflow-hidden rounded-3xl border border-primary/20 bg-bg-main/40">
-                      <img
-                        src={mvai}
-                        alt="AI market analysis visual"
-                        className="h-56 w-full object-contain sm:h-64"
-                      />
+                      <img src={mvai} alt="AI market analysis visual" className="h-56 w-full object-contain sm:h-64" />
                     </div>
 
                     <div className="mt-4 grid grid-cols-1 gap-3">
@@ -714,10 +731,34 @@ const QuantumAI = () => {
                                   : "border border-primary/20 bg-primary/8"
                               }`}
                             >
-                              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
-                                Capital Requirement
-                              </p>
-                              <p className="mt-2 text-3xl font-bold text-primary">{pkg.capital}</p>
+                              <div className="flex items-start justify-between gap-3">
+                                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
+                                  Capital Requirement
+                                </p>
+
+                                {pkg.hasDiscount && (
+                                  <span className="shrink-0 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
+                                    {pkg.discountPercentage}% Off
+                                  </span>
+                                )}
+                              </div>
+
+                              {pkg.hasDiscount ? (
+                                <div className="mt-2">
+                                  <div className="flex flex-wrap items-end gap-2">
+                                    <span className="text-lg font-semibold text-text-dimmed line-through">
+                                      {pkg.capital}
+                                    </span>
+                                    <span className="text-3xl font-bold text-primary">{pkg.discountedCapital}</span>
+                                  </div>
+
+                                  <p className="mt-2 text-xs font-medium text-text-muted">
+                                    Discounted capital requirement
+                                  </p>
+                                </div>
+                              ) : (
+                                <p className="mt-2 text-3xl font-bold text-primary">{pkg.capital}</p>
+                              )}
                             </div>
 
                             <div
@@ -836,6 +877,29 @@ const QuantumAI = () => {
               </AnimatedContent>
             ))}
           </div>
+
+          <AnimatedContent direction="horizontal" distance={100} reverse={false} config={{ tension: 55, friction: 24 }}>
+            <div className="mt-8 overflow-hidden rounded-4xl border border-primary/30 bg-linear-to-br from-primary/10 via-bg-elevated to-secondary/10 p-5 glow-cyan sm:p-6">
+              <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+                <div className="flex items-start gap-4">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-3xl border border-primary/30 bg-primary/10">
+                    <Icon icon="mdi:timer-sand" width={28} height={28} className="text-primary" />
+                  </div>
+
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Limited Time Offer</p>
+                    <h3 className="mt-2 text-2xl font-bold leading-tight text-text-primary">
+                      50% Discount Valid for the First 800 Customers
+                    </h3>
+                    <p className="mt-2 max-w-3xl text-sm leading-7 text-text-muted">
+                      This exclusive discount is available for a limited period and will only apply to the first 800
+                      customers who select an eligible AI trading bot.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AnimatedContent>
 
           {/* Homepage-style CTA */}
           <AnimatedContent direction="horizontal" distance={100} reverse={false} config={{ tension: 55, friction: 24 }}>
