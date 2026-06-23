@@ -884,34 +884,73 @@ const QuantumAI = () => {
                     reverse={false}
                     config={{ tension: 55, friction: 24 }}
                   >
-                    <div className="overflow-hidden rounded-4xl border border-primary/30 bg-linear-to-br from-primary/10 via-bg-elevated to-secondary/10 p-5 glow-cyan sm:p-6">
-                      <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+                    <div className="relative overflow-hidden rounded-4xl border border-primary/30 bg-linear-to-br from-primary/15 via-bg-elevated to-secondary/15 p-5 shadow-2xl shadow-primary/10 glow-cyan sm:p-7">
+                      {/* Decorative background glow */}
+                      <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/20 blur-3xl" />
+                      <div className="pointer-events-none absolute -bottom-24 left-10 h-56 w-56 rounded-full bg-secondary/20 blur-3xl" />
+
+                      <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
                         <div className="flex items-start gap-4">
-                          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-3xl border border-primary/30 bg-primary/10">
-                            <Icon icon="mdi:timer-sand" width={28} height={28} className="text-primary" />
+                          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-3xl border border-primary/40 bg-primary/15 shadow-lg shadow-primary/10">
+                            <Icon icon="mdi:timer-sand" width={32} height={32} className="text-primary" />
                           </div>
 
                           <div>
-                            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                              Limited Time Offer
-                            </p>
-                            <h3 className="mt-2 text-2xl font-bold leading-tight text-text-primary">
-                              50% Discount Valid for the First 800 Customers
+                            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1">
+                              <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_currentColor]" />
+                              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+                                Limited Time Offer
+                              </p>
+                            </div>
+
+                            <h3 className="mt-3 max-w-3xl text-2xl font-bold leading-tight text-text-primary sm:text-3xl">
+                              50% Discount for the First 800 Customers
                             </h3>
-                            <p className="mt-2 max-w-3xl text-sm leading-7 text-text-muted">
-                              This exclusive discount is available for a limited period and will only apply to the first
-                              800 customers who select an eligible AI trading bot.
+
+                            <p className="mt-3 max-w-3xl text-sm leading-7 text-text-muted">
+                              Secure your exclusive discount before all available spots are claimed. This offer applies
+                              only to eligible AI trading bot selections.
                             </p>
+
+                            {/* Progress bar */}
+                            <div className="mt-5 max-w-xl">
+                              <div className="mb-2 flex items-center justify-between text-xs font-medium text-text-muted">
+                                <span>68 registered</span>
+                                <span>732 spots remaining</span>
+                              </div>
+
+                              <div className="h-3 overflow-hidden rounded-full border border-primary/20 bg-bg-main/60">
+                                <div
+                                  className="h-full rounded-full bg-linear-to-r from-primary to-secondary shadow-[0_0_18px_rgba(0,255,255,0.35)]"
+                                  style={{ width: "8.5%" }}
+                                />
+                              </div>
+                            </div>
                           </div>
                         </div>
 
-                        <div className="flex shrink-0 items-center gap-3 rounded-3xl border border-primary/25 bg-bg-main/50 px-5 py-4">
-                          <Icon icon="mdi:account-group-outline" width={24} height={24} className="text-primary" />
-                          <div>
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
-                              Offer Limit
-                            </p>
-                            <p className="text-lg font-bold text-primary">First 800 Customers</p>
+                        <div className="grid shrink-0 grid-cols-1 gap-3 sm:grid-cols-2 lg:w-[360px]">
+                          <div className="rounded-3xl border border-primary/25 bg-bg-main/60 p-5 backdrop-blur">
+                            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10">
+                              <Icon icon="mdi:account-group-outline" width={24} height={24} className="text-primary" />
+                            </div>
+
+                            <p className="text-3xl font-bold text-text-primary">68</p>
+                            <p className="mt-1 text-sm font-medium text-text-muted">Customers Registered</p>
+                          </div>
+
+                          <div className="rounded-3xl border border-secondary/25 bg-bg-main/60 p-5 backdrop-blur">
+                            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-secondary/10">
+                              <Icon
+                                icon="mdi:ticket-percent-outline"
+                                width={24}
+                                height={24}
+                                className="text-secondary"
+                              />
+                            </div>
+
+                            <p className="text-3xl font-bold text-text-primary">732</p>
+                            <p className="mt-1 text-sm font-medium text-text-muted">Spots Remaining</p>
                           </div>
                         </div>
                       </div>
