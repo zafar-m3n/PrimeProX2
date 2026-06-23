@@ -929,7 +929,7 @@ const QuantumAI = () => {
                           </div>
                         </div>
 
-                        <div className="grid shrink-0 grid-cols-1 gap-3 sm:grid-cols-2 lg:w-[360px]">
+                        <div className="grid shrink-0 grid-cols-1 gap-3 sm:grid-cols-2 lg:w-90">
                           <div className="rounded-3xl border border-primary/25 bg-bg-main/60 p-5 backdrop-blur">
                             <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10">
                               <Icon icon="mdi:account-group-outline" width={24} height={24} className="text-primary" />
