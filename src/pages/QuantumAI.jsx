@@ -243,6 +243,12 @@ const QuantumAI = () => {
     },
   ];
 
+  const registeredCustomers = 229;
+
+  const displayedRegisteredCustomers = Math.min(registeredCustomers, 800);
+  const spotsRemaining = Math.max(800 - registeredCustomers, 0);
+  const offerProgressPercentage = Math.min((registeredCustomers / 800) * 100, 100);
+
   return (
     <div className="overflow-hidden bg-bg-main text-text-primary">
       {/* Hero */}
@@ -915,14 +921,14 @@ const QuantumAI = () => {
                             {/* Progress bar */}
                             <div className="mt-5 max-w-xl">
                               <div className="mb-2 flex items-center justify-between text-xs font-medium text-text-muted">
-                                <span>68 registered</span>
-                                <span>732 spots remaining</span>
+                                <span>{displayedRegisteredCustomers} registered</span>
+                                <span>{spotsRemaining} spots remaining</span>
                               </div>
 
                               <div className="h-3 overflow-hidden rounded-full border border-primary/20 bg-bg-main/60">
                                 <div
                                   className="h-full rounded-full bg-linear-to-r from-primary to-secondary shadow-[0_0_18px_rgba(0,255,255,0.35)]"
-                                  style={{ width: "8.5%" }}
+                                  style={{ width: `${offerProgressPercentage}%` }}
                                 />
                               </div>
                             </div>
@@ -935,7 +941,7 @@ const QuantumAI = () => {
                               <Icon icon="mdi:account-group-outline" width={24} height={24} className="text-primary" />
                             </div>
 
-                            <p className="text-3xl font-bold text-text-primary">68</p>
+                            <p className="text-3xl font-bold text-text-primary">{displayedRegisteredCustomers}</p>
                             <p className="mt-1 text-sm font-medium text-text-muted">Customers Registered</p>
                           </div>
 
@@ -949,7 +955,7 @@ const QuantumAI = () => {
                               />
                             </div>
 
-                            <p className="text-3xl font-bold text-text-primary">732</p>
+                            <p className="text-3xl font-bold text-text-primary">{spotsRemaining}</p>
                             <p className="mt-1 text-sm font-medium text-text-muted">Spots Remaining</p>
                           </div>
                         </div>
