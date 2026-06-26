@@ -243,7 +243,7 @@ const QuantumAI = () => {
     },
   ];
 
-  const registeredCustomers = 229;
+  const registeredCustomers = 419;
 
   const displayedRegisteredCustomers = Math.min(registeredCustomers, 800);
   const spotsRemaining = Math.max(800 - registeredCustomers, 0);
