@@ -1,7 +1,7 @@
 import React from "react";
 
 import AnimatedContent from "@/components/ui/AnimatedContent";
-import aiReport from "@/assets/aiReport.jpeg";
+import aiJuneReport from "@/assets/aiJuneReport.jpeg";
 
 function AICommunityReport() {
   return (
@@ -20,8 +20,8 @@ function AICommunityReport() {
         >
           <div className="overflow-hidden rounded-4xl border border-primary/25 bg-bg-card p-3 shadow-[0_0_70px_rgba(0,212,255,0.10)] sm:p-4">
             <img
-              src={aiReport}
-              alt="May 2026 AI Community Report"
+              src={aiJuneReport}
+              alt="June 2026 AI Community Report"
               className="h-auto w-full rounded-3xl object-cover"
               loading="lazy"
             />

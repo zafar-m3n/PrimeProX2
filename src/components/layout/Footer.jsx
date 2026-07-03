@@ -179,19 +179,6 @@ const Footer = () => {
             <span className="italic">5 The Triangle, Wildwood Drive, Worcester, Worcestershire, WR5 2QX.</span>
           </p>
 
-          <p>
-            PrimeProX is proud to be a certified broker, duly licensed and regulated by{" "}
-            <strong>PRIMEPROX LIMITED</strong>. Our company number is{" "}
-            <a
-              href="https://find-and-update.company-information.service.gov.uk/company/06792170"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cursor-pointer text-primary hover:underline"
-            >
-              06792170
-            </a>
-            , with the registered address <span className="italic">16 Canmore Gardens, London, England, SW16 5BE.</span>
-          </p>
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
