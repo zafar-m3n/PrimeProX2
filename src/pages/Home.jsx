@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 
+import homeHero from "@/assets/homeHero.png";
 import gettingStartedImage from "@/assets/gettingStarted.webp";
 import howItWorksImage from "@/assets/HowItWorks.webp";
 import mvAIImage from "@/assets/mvai.webp";
@@ -249,68 +250,101 @@ const Home = () => {
   return (
     <div className="overflow-hidden bg-bg-main text-text-primary">
       {/* Hero */}
-      <section className="relative isolate overflow-hidden py-20 sm:py-24 lg:py-32">
+      <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-24 xl:py-28">
         <Spotlight className="-top-40 left-1/2 -translate-x-1/2" fill="rgba(0, 212, 255, 0.7)" />
 
         <div className="pointer-events-none absolute inset-0 gradient-mesh" />
         <div className="glow-orb glow-orb-cyan -top-20 right-0 h-72 w-72 md:h-96 md:w-96" />
         <div className="glow-orb glow-orb-blue bottom-0 left-0 h-72 w-72 md:h-112 md:w-md" />
 
-        <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <AnimatedContent
-            direction="vertical"
-            distance={120}
-            reverse={false}
-            config={{ tension: 60, friction: 22 }}
-            initialOpacity={0}
-          >
-            <div className="mx-auto max-w-4xl text-center">
-              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-bg-card px-4 py-2">
-                <Icon icon="mdi:brain" width={16} height={16} className="text-primary" />
-                <ShinyText
-                  text="PrimeProX AI Trading"
-                  textColor="rgba(0, 212, 255, 0.85)"
-                  shineColor="#00D4FF"
-                  className="text-xs font-semibold uppercase tracking-[0.22em]"
-                />
-              </div>
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12 xl:gap-16">
+            {/* Left Content */}
+            <div className="lg:col-span-6 xl:col-span-7">
+              <AnimatedContent
+                direction="horizontal"
+                distance={100}
+                reverse={true}
+                config={{ tension: 60, friction: 22 }}
+                initialOpacity={0}
+              >
+                <div className="text-center lg:text-left">
+                  <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-bg-card px-4 py-2">
+                    <Icon icon="mdi:brain" width={16} height={16} className="text-primary" />
 
-              <div className="mx-auto max-w-3xl">
-                <TextGenerateEffect
-                  words="Intelligent Trading Powered by Advanced AI"
-                  className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl"
-                  duration={0.45}
-                  multiColored={true}
-                  animated={true}
-                />
-              </div>
+                    <ShinyText
+                      text="PrimeProX AI Trading"
+                      textColor="rgba(0, 212, 255, 0.85)"
+                      shineColor="#00D4FF"
+                      className="text-xs font-semibold uppercase tracking-[0.22em]"
+                    />
+                  </div>
 
-              <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-text-muted md:text-lg">
-                PrimeProX combines automation, live market analysis, and technology-led execution support to help
-                traders approach markets with more speed, structure, and confidence.
-              </p>
+                  <div className="mx-auto max-w-3xl lg:mx-0">
+                    <TextGenerateEffect
+                      words="Intelligent Trading Powered by Advanced AI"
+                      className="text-4xl font-bold leading-tight sm:text-5xl lg:text-5xl xl:text-6xl"
+                      duration={0.45}
+                      multiColored={true}
+                      animated={true}
+                    />
+                  </div>
 
-              <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Link to="/quantum-ai">
-                  <Button className="w-full px-8 py-3 sm:w-auto">Explore Quantum AI</Button>
-                </Link>
+                  <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-text-muted md:text-lg lg:mx-0">
+                    PrimeProX combines automation, live market analysis, and technology-led execution support to help
+                    traders approach markets with more speed, structure, and confidence.
+                  </p>
 
-                <Link to="/investing/promotions">
-                  <Button variant="outline" className="w-full px-8 py-3 sm:w-auto">
-                    View Promotions
-                  </Button>
-                </Link>
-              </div>
+                  <div className="mt-8 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center lg:justify-start">
+                    <Link to="/quantum-ai" className="w-full sm:w-auto">
+                      <Button className="w-full px-8 py-3 sm:w-auto">Explore Quantum AI</Button>
+                    </Link>
 
-              <div className="mt-12 flex flex-wrap items-center justify-center gap-3 text-sm text-text-muted">
-                <span className="rounded-full border border-border bg-bg-card px-4 py-2">Multi-Market Coverage</span>
-                <span className="rounded-full border border-border bg-bg-card px-4 py-2">AI-Driven Insights</span>
-                <span className="rounded-full border border-border bg-bg-card px-4 py-2">
-                  Structured Execution Support
-                </span>
-              </div>
+                    <Link to="/investing/promotions" className="w-full sm:w-auto">
+                      <Button variant="outline" className="w-full px-8 py-3 sm:w-auto">
+                        View Promotions
+                      </Button>
+                    </Link>
+                  </div>
+
+                  <div className="mt-10 flex flex-wrap items-center justify-center gap-3 text-sm text-text-muted lg:justify-start">
+                    <span className="rounded-full border border-border bg-bg-card px-4 py-2">
+                      Multi-Market Coverage
+                    </span>
+
+                    <span className="rounded-full border border-border bg-bg-card px-4 py-2">AI-Driven Insights</span>
+
+                    <span className="rounded-full border border-border bg-bg-card px-4 py-2">
+                      Structured Execution Support
+                    </span>
+                  </div>
+                </div>
+              </AnimatedContent>
             </div>
-          </AnimatedContent>
+
+            {/* Right Hero Image */}
+            <div className="lg:col-span-6 xl:col-span-5">
+              <AnimatedContent
+                direction="horizontal"
+                distance={100}
+                reverse={false}
+                config={{ tension: 60, friction: 22 }}
+                initialOpacity={0}
+              >
+                <div className="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-none">
+                  <div className="absolute inset-8 rounded-full bg-primary/10 blur-3xl" />
+
+                  <div className="relative overflow-hidden rounded-4xl border border-primary/20 bg-bg-card/50 p-2 backdrop-blur-sm">
+                    <img
+                      src={homeHero}
+                      alt="PrimeProX AI-powered trading platform"
+                      className="h-auto w-full rounded-3xl object-cover"
+                    />
+                  </div>
+                </div>
+              </AnimatedContent>
+            </div>
+          </div>
         </div>
       </section>
 
