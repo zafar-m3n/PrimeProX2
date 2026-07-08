@@ -127,7 +127,7 @@ const QuantumAI = () => {
       description:
         "Quantum Prime is one of our most popular AI trading systems, designed for traders who want access to multi-market analysis and advanced automated trading strategies.",
       capital: "$1,000",
-      hasDiscount: true,
+      hasDiscount: false,
       discountPercentage: 50,
       discountedCapital: "$500",
       markets: ["Forex", "Gold", "Cryptocurrency"],
@@ -147,7 +147,7 @@ const QuantumAI = () => {
       description:
         "Quantum Edge introduces more advanced algorithmic trading capabilities, allowing the system to analyze multiple financial markets simultaneously and adapt to changing market conditions.",
       capital: "$2,500",
-      hasDiscount: true,
+      hasDiscount: false,
       discountPercentage: 50,
       discountedCapital: "$1,250",
       markets: ["Forex", "Gold", "Cryptocurrency", "Indices"],
@@ -167,7 +167,7 @@ const QuantumAI = () => {
       description:
         "Quantum Elite is designed for traders who want access to more advanced AI trading models with deeper market analysis and optimized execution capabilities.",
       capital: "$5,000",
-      hasDiscount: true,
+      hasDiscount: false,
       discountPercentage: 50,
       discountedCapital: "$2,500",
       markets: ["Forex", "Gold", "Cryptocurrency", "Indices"],
@@ -187,7 +187,7 @@ const QuantumAI = () => {
       description:
         "Quantum Institutional is built for investors looking for powerful AI trading systems capable of monitoring multiple global financial markets and executing advanced strategies.",
       capital: "$10,000",
-      hasDiscount: true,
+      hasDiscount: false,
       discountPercentage: 50,
       discountedCapital: "$5,000",
       markets: ["Forex", "Gold", "Cryptocurrency", "Indices", "Commodities"],
@@ -207,7 +207,7 @@ const QuantumAI = () => {
       description:
         "Quantum Capital Pro is designed for serious investors seeking advanced AI-powered trading infrastructure with expanded market monitoring and enhanced trading strategies.",
       capital: "$25,000",
-      hasDiscount: true,
+      hasDiscount: false,
       discountPercentage: 50,
       discountedCapital: "$12,500",
       markets: ["Forex", "Gold", "Cryptocurrency", "Indices", "Commodities"],
@@ -227,7 +227,7 @@ const QuantumAI = () => {
       description:
         "Quantum Sovereign represents the highest level of our AI trading technology, built for large investors seeking powerful automated trading systems with global market intelligence.",
       capital: "$50,000",
-      hasDiscount: true,
+      hasDiscount: false,
       discountPercentage: 50,
       discountedCapital: "$25,000",
       markets: ["Forex", "Cryptocurrency", "Gold", "Indices", "Commodities", "Global Stocks"],
@@ -243,17 +243,12 @@ const QuantumAI = () => {
     },
   ];
 
-  const registeredCustomers = 784;
-
-  const displayedRegisteredCustomers = Math.min(registeredCustomers, 800);
-  const spotsRemaining = Math.max(800 - registeredCustomers, 0);
-  const offerProgressPercentage = Math.min((registeredCustomers / 800) * 100, 100);
-
   return (
     <div className="overflow-hidden bg-bg-main text-text-primary">
       {/* Hero */}
       <section className="relative isolate overflow-hidden py-20 sm:py-24 lg:py-32">
         <Spotlight className="-top-40 left-1/2 -translate-x-1/2" fill="rgba(0, 212, 255, 0.7)" />
+
         <div className="pointer-events-none absolute inset-0 gradient-mesh" />
         <div className="glow-orb glow-orb-cyan -top-20 right-0 h-72 w-72 md:h-96 md:w-96" />
         <div className="glow-orb glow-orb-blue bottom-0 left-0 h-72 w-72 md:h-112 md:w-md" />
@@ -271,6 +266,7 @@ const QuantumAI = () => {
                 <div>
                   <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-bg-card px-4 py-2">
                     <Icon icon="mdi:brain" width={16} height={16} className="text-primary" />
+
                     <ShinyText
                       text="AI Technology"
                       textColor="rgba(0, 212, 255, 0.85)"
@@ -308,6 +304,7 @@ const QuantumAI = () => {
                     >
                       Get Started Today
                     </Button>
+
                     <Button variant="outline" className="px-8 py-3">
                       Explore AI Systems
                     </Button>
@@ -315,7 +312,9 @@ const QuantumAI = () => {
 
                   <div className="mt-10 flex flex-wrap gap-3 text-sm text-text-muted">
                     <span className="rounded-full border border-border bg-bg-card px-4 py-2">Machine Learning</span>
+
                     <span className="rounded-full border border-border bg-bg-card px-4 py-2">Real-Time Analysis</span>
+
                     <span className="rounded-full border border-border bg-bg-card px-4 py-2">Automated Execution</span>
                   </div>
                 </div>
@@ -340,6 +339,7 @@ const QuantumAI = () => {
 
                       <div>
                         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">AI Overview</p>
+
                         <h4 className="mt-1 text-lg font-semibold text-text-primary">Live Market Intelligence</h4>
                       </div>
                     </div>
@@ -351,6 +351,7 @@ const QuantumAI = () => {
                     <div className="mt-4 grid grid-cols-1 gap-3">
                       <div className="rounded-2xl border border-border-hover bg-bg-main/50 p-4">
                         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">AI Capability</p>
+
                         <p className="mt-2 text-sm leading-7 text-text-muted">
                           Analyzes market activity in real time and identifies potential trading opportunities.
                         </p>
@@ -358,6 +359,7 @@ const QuantumAI = () => {
 
                       <div className="rounded-2xl border border-border-hover bg-bg-main/50 p-4">
                         <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">Core Stack</p>
+
                         <p className="mt-2 text-sm leading-7 text-text-muted">
                           Machine learning, real-time processing, and automated execution working together.
                         </p>
@@ -383,7 +385,9 @@ const QuantumAI = () => {
                   shineColor="#00D4FF"
                   className="text-xs font-semibold uppercase tracking-[0.24em]"
                 />
+
                 <h2 className="mt-3">A Multi-Layered Trading Intelligence System</h2>
+
                 <p className="mx-auto mt-4 max-w-3xl text-base text-text-muted">
                   Our AI trading engine operates through several layers of advanced analysis to ensure accurate
                   decision-making and optimized trading performance.
@@ -400,13 +404,16 @@ const QuantumAI = () => {
                       <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-primary/10">
                         <Icon icon={item.icon} width={26} height={26} className="text-primary" />
                       </div>
+
                       <div className="flex-1">
                         <div className="mb-2 flex items-center gap-3">
                           <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-semibold tracking-[0.18em] text-primary">
                             {item.step}
                           </span>
+
                           <div className="h-px flex-1 bg-linear-to-r from-primary/35 to-transparent" />
                         </div>
+
                         <h4 className="text-lg leading-7 text-text-primary">{item.title}</h4>
                       </div>
                     </div>
@@ -456,6 +463,7 @@ const QuantumAI = () => {
                     <div key={i} className="rounded-2xl border border-border bg-bg-main/55 p-4">
                       <div className="flex items-center gap-2">
                         <Icon icon="mdi:check-circle" width={18} height={18} className="text-primary" />
+
                         <span className="text-sm text-text-primary">{item}</span>
                       </div>
                     </div>
@@ -504,6 +512,7 @@ const QuantumAI = () => {
                       <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
                         <Icon icon={market.icon} width={20} height={20} className="text-primary" />
                       </div>
+
                       <span className="text-sm leading-6 text-text-primary">{market.name}</span>
                     </div>
                   ))}
@@ -530,6 +539,7 @@ const QuantumAI = () => {
                 shineColor="#00D4FF"
                 className="text-xs font-semibold uppercase tracking-[0.24em]"
               />
+
               <h2 className="mt-3">Built for Stability, Speed, and Innovation</h2>
             </div>
           </AnimatedContent>
@@ -550,17 +560,21 @@ const QuantumAI = () => {
                 <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
                   {strengthCards[0].label}
                 </p>
+
                 <h4 className="mt-3 text-xl">{strengthCards[0].title}</h4>
 
                 <p className="mt-4 text-sm leading-7 text-text-muted">{strengthCards[0].intro}</p>
+
                 <p className="mt-4 text-sm leading-7 text-text-muted">{strengthCards[0].body}</p>
 
                 <div className="mt-5 rounded-3xl border border-border bg-bg-main/40 p-5">
                   <p className="text-sm leading-7 text-text-muted">{strengthCards[0].listTitle}</p>
+
                   <ul className="mt-4 grid grid-cols-1 gap-3">
                     {strengthCards[0].list.map((item, i) => (
                       <li key={i} className="flex items-start gap-2 rounded-2xl bg-bg-card p-3 text-sm text-text-muted">
                         <Icon icon="mdi:check-circle" width={16} height={16} className="mt-1 shrink-0 text-primary" />
+
                         <span>{item}</span>
                       </li>
                     ))}
@@ -586,6 +600,7 @@ const QuantumAI = () => {
                   </div>
 
                   <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">{card.label}</p>
+
                   <h4 className="mt-3 text-xl">{card.title}</h4>
 
                   <div className="mt-4 space-y-4">
@@ -656,7 +671,9 @@ const QuantumAI = () => {
                 shineColor="#00D4FF"
                 className="text-xs font-semibold uppercase tracking-[0.24em]"
               />
+
               <h2 className="mt-3">Choose Your AI Trading System</h2>
+
               <p className="mx-auto mt-4 max-w-4xl text-base leading-8 text-text-muted">
                 Our platform offers a range of intelligent AI trading systems designed to suit different investment
                 goals and trading strategies. Each system is powered by advanced artificial intelligence that
@@ -666,6 +683,7 @@ const QuantumAI = () => {
               </p>
             </div>
           </AnimatedContent>
+
           <div className="space-y-5">
             {aiPackages.map((pkg, index) => (
               <React.Fragment key={pkg.name}>
@@ -725,7 +743,9 @@ const QuantumAI = () => {
                             }`}
                           >
                             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">AI System</p>
+
                             <h3 className="mt-3 text-2xl font-bold">{pkg.name}</h3>
+
                             <p className="mt-2 text-sm text-text-dimmed">{pkg.subtitle}</p>
 
                             <div className="mt-6 space-y-3">
@@ -754,6 +774,7 @@ const QuantumAI = () => {
                                       <span className="text-lg font-semibold text-text-dimmed line-through">
                                         {pkg.capital}
                                       </span>
+
                                       <span className="text-3xl font-bold text-primary">{pkg.discountedCapital}</span>
                                     </div>
 
@@ -776,6 +797,7 @@ const QuantumAI = () => {
                                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
                                   Estimated Performance
                                 </p>
+
                                 <p className="mt-2 text-lg font-bold text-primary">{pkg.performance}</p>
                               </div>
                             </div>
@@ -819,6 +841,7 @@ const QuantumAI = () => {
                                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
                                   Cycle Duration
                                 </p>
+
                                 <p className="mt-2 text-sm font-semibold text-text-primary">{pkg.cycle}</p>
                               </div>
 
@@ -832,6 +855,7 @@ const QuantumAI = () => {
                                 <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
                                   Markets Covered
                                 </p>
+
                                 <p className="mt-2 text-sm font-semibold text-text-primary">
                                   {pkg.markets.length} Markets
                                 </p>
@@ -862,6 +886,7 @@ const QuantumAI = () => {
                                     height={16}
                                     className="mt-1 shrink-0 text-primary"
                                   />
+
                                   <span>{feature}</span>
                                 </li>
                               ))}
@@ -890,73 +915,91 @@ const QuantumAI = () => {
                     reverse={false}
                     config={{ tension: 55, friction: 24 }}
                   >
-                    <div className="relative overflow-hidden rounded-4xl border border-primary/30 bg-linear-to-br from-primary/15 via-bg-elevated to-secondary/15 p-5 shadow-2xl shadow-primary/10 glow-cyan sm:p-7">
-                      {/* Decorative background glow */}
-                      <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/20 blur-3xl" />
-                      <div className="pointer-events-none absolute -bottom-24 left-10 h-56 w-56 rounded-full bg-secondary/20 blur-3xl" />
+                    <div className="relative overflow-hidden rounded-4xl border border-red-500/30 bg-linear-to-br from-red-500/10 via-bg-elevated to-red-500/5 p-5 shadow-2xl shadow-red-500/10 sm:p-7">
+                      <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-red-500/10 blur-3xl" />
+                      <div className="pointer-events-none absolute -bottom-24 left-10 h-56 w-56 rounded-full bg-red-500/10 blur-3xl" />
 
-                      <div className="relative z-10 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-                        <div className="flex items-start gap-4">
-                          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-3xl border border-primary/40 bg-primary/15 shadow-lg shadow-primary/10">
-                            <Icon icon="mdi:timer-sand" width={32} height={32} className="text-primary" />
-                          </div>
-
-                          <div>
-                            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1">
-                              <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_currentColor]" />
-                              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                                Limited Time Offer
-                              </p>
+                      <div className="relative z-10 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-stretch">
+                        <div className="lg:col-span-8">
+                          <div className="flex items-start gap-4">
+                            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-3xl border border-red-500/40 bg-red-500/10 shadow-lg shadow-red-500/10">
+                              <Icon icon="mdi:timer-sand" width={32} height={32} className="text-red-400" />
                             </div>
 
-                            <h3 className="mt-3 max-w-3xl text-2xl font-bold leading-tight text-text-primary sm:text-3xl">
-                              50% Discount for the First 800 Customers
-                            </h3>
+                            <div className="min-w-0 flex-1">
+                              <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-3 py-1">
+                                <span className="h-2 w-2 rounded-full bg-red-400 shadow-[0_0_12px_currentColor]" />
 
-                            <p className="mt-3 max-w-3xl text-sm leading-7 text-text-muted">
-                              Secure your exclusive discount before all available spots are claimed. This offer applies
-                              only to eligible AI trading bot selections.
-                            </p>
-
-                            {/* Progress bar */}
-                            <div className="mt-5 max-w-xl">
-                              <div className="mb-2 flex items-center justify-between text-xs font-medium text-text-muted">
-                                <span>{displayedRegisteredCustomers} registered</span>
-                                <span>{spotsRemaining} spots remaining</span>
+                                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
+                                  Limited Time Offer
+                                </p>
                               </div>
 
-                              <div className="h-3 overflow-hidden rounded-full border border-primary/20 bg-bg-main/60">
-                                <div
-                                  className="h-full rounded-full bg-linear-to-r from-primary to-secondary shadow-[0_0_18px_rgba(0,255,255,0.35)]"
-                                  style={{ width: `${offerProgressPercentage}%` }}
-                                />
+                              <div className="mt-3 flex flex-wrap items-center gap-3">
+                                <h3 className="text-2xl font-bold leading-tight text-text-primary sm:text-3xl">
+                                  <span className="line-through decoration-red-400 decoration-2">
+                                    50% Discount for the First 800 Customers
+                                  </span>
+                                </h3>
+
+                                <span className="rounded-lg border border-red-500/40 bg-red-500/15 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-red-300">
+                                  Over
+                                </span>
+                              </div>
+
+                              <p className="mt-3 max-w-3xl text-sm leading-7 text-text-muted">
+                                Thank you for the incredible response! The first 800 customer offer has now ended. Stay
+                                tuned for new offers and exclusive opportunities.
+                              </p>
+
+                              <div className="mt-6 max-w-3xl">
+                                <div className="mb-2 flex flex-col gap-1 text-xs font-medium text-text-muted sm:flex-row sm:items-center sm:justify-between">
+                                  <span>800 Customers Successfully Enrolled</span>
+
+                                  <span className="font-semibold text-red-300">Offer Completed</span>
+                                </div>
+
+                                <div className="h-3 overflow-hidden rounded-full border border-red-500/20 bg-bg-main/60">
+                                  <div className="h-full w-full rounded-full bg-linear-to-r from-red-500 to-red-400 shadow-[0_0_18px_rgba(239,68,68,0.35)]" />
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
 
-                        <div className="grid shrink-0 grid-cols-1 gap-3 sm:grid-cols-2 lg:w-90">
-                          <div className="rounded-3xl border border-primary/25 bg-bg-main/60 p-5 backdrop-blur">
-                            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-primary/10">
-                              <Icon icon="mdi:account-group-outline" width={24} height={24} className="text-primary" />
+                        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:col-span-4">
+                          <div className="flex flex-col rounded-3xl border border-red-500/25 bg-bg-main/60 p-5 backdrop-blur">
+                            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-red-500/10">
+                              <Icon icon="mdi:account-group" width={25} height={25} className="text-red-400" />
                             </div>
 
-                            <p className="text-3xl font-bold text-text-primary">{displayedRegisteredCustomers}</p>
-                            <p className="mt-1 text-sm font-medium text-text-muted">Customers Registered</p>
+                            <p className="text-3xl font-bold text-red-300">800+</p>
+
+                            <p className="mt-1 text-sm font-medium leading-6 text-text-muted">
+                              Customers Successfully Enrolled
+                            </p>
+
+                            <div className="mt-auto pt-5">
+                              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-red-500/30 bg-red-500/10">
+                                <Icon icon="mdi:check" width={20} height={20} className="text-red-400" />
+                              </div>
+                            </div>
                           </div>
 
-                          <div className="rounded-3xl border border-secondary/25 bg-bg-main/60 p-5 backdrop-blur">
-                            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-secondary/10">
-                              <Icon
-                                icon="mdi:ticket-percent-outline"
-                                width={24}
-                                height={24}
-                                className="text-secondary"
-                              />
+                          <div className="flex flex-col rounded-3xl border border-red-500/25 bg-bg-main/60 p-5 backdrop-blur">
+                            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-red-500/10">
+                              <Icon icon="mdi:flag-variant" width={25} height={25} className="text-red-400" />
                             </div>
 
-                            <p className="text-3xl font-bold text-text-primary">{spotsRemaining}</p>
-                            <p className="mt-1 text-sm font-medium text-text-muted">Spots Remaining</p>
+                            <p className="text-3xl font-bold text-red-300">OFFER</p>
+
+                            <p className="mt-1 text-sm font-medium leading-6 text-text-muted">Has Ended</p>
+
+                            <div className="mt-auto pt-5">
+                              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-red-500/30 bg-red-500/10">
+                                <Icon icon="mdi:check" width={20} height={20} className="text-red-400" />
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -999,6 +1042,7 @@ const QuantumAI = () => {
                 >
                   Get Started Today
                 </Button>
+
                 <Button variant="outline" className="px-8 py-3">
                   Explore AI Systems
                 </Button>
