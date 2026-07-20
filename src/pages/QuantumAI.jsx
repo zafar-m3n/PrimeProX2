@@ -6,8 +6,9 @@ import ShinyText from "@/components/ui/ShinyText";
 import Spotlight from "@/components/ui/Spotlight";
 import TextGenerateEffect from "@/components/ui/TextGenerateEffect";
 import mvai from "@/assets/mvai.webp";
+import aiSystemPromo from "@/assets/aiSystemPromo.jpeg";
 
-const QuantumAI = () => {
+function QuantumAI() {
   useEffect(() => {
     document.title = "PrimeProX | Quantum AI";
   }, []);
@@ -268,6 +269,425 @@ const QuantumAI = () => {
 
   return (
     <div className="overflow-hidden bg-bg-main text-text-primary">
+      {/* Exclusive AI System Promotion */}
+      <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-24">
+        <Spotlight className="-top-40 left-1/2 -translate-x-1/2" fill="rgba(0, 212, 255, 0.7)" />
+
+        <div className="pointer-events-none absolute inset-0 gradient-mesh" />
+        <div className="glow-orb glow-orb-cyan -top-20 right-0 h-72 w-72 md:h-96 md:w-96" />
+        <div className="glow-orb glow-orb-blue bottom-0 left-0 h-72 w-72 md:h-112 md:w-md" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedContent
+            direction="vertical"
+            distance={70}
+            reverse={true}
+            config={{ tension: 55, friction: 24 }}
+            initialOpacity={0}
+          >
+            <div className="relative overflow-hidden rounded-4xl border border-primary/30 bg-linear-to-br from-bg-card via-bg-elevated to-bg-card p-3 glow-cyan-lg sm:p-4">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,212,255,0.16),transparent_36%),radial-gradient(circle_at_bottom_left,rgba(14,165,233,0.12),transparent_32%)]" />
+
+              <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-bg-main/50">
+                <img
+                  src={aiSystemPromo}
+                  alt="Exclusive AI system promotion placeholder"
+                  className="aspect-video w-full object-contain"
+                />
+
+                <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-bg-main/45 via-transparent to-transparent" />
+              </div>
+            </div>
+          </AnimatedContent>
+        </div>
+      </section>
+
+      {/* Packages */}
+      <section className="bg-bg-card py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedContent direction="horizontal" distance={100} reverse={true} config={{ tension: 55, friction: 24 }}>
+            <div className="mb-12 text-center">
+              <ShinyText
+                text="AI Trading Systems"
+                textColor="rgba(0, 212, 255, 0.85)"
+                shineColor="#00D4FF"
+                className="text-xs font-semibold uppercase tracking-[0.24em]"
+              />
+
+              <h2 className="mt-3">Choose Your AI Trading System</h2>
+
+              <p className="mx-auto mt-4 max-w-4xl text-base leading-8 text-text-muted">
+                Our platform offers a range of intelligent AI trading systems designed to suit different investment
+                goals and trading strategies. Each system is powered by advanced artificial intelligence that
+                continuously analyzes global markets, identifies opportunities, and executes trades automatically.
+                Whether you are starting your trading journey or looking for advanced automated trading solutions, our
+                AI systems are built to deliver powerful market analysis and intelligent execution.
+              </p>
+            </div>
+          </AnimatedContent>
+
+          <div className="space-y-5">
+            {aiPackages.map((pkg, index) => (
+              <React.Fragment key={pkg.name}>
+                <AnimatedContent
+                  direction="horizontal"
+                  distance={100}
+                  reverse={index % 2 === 0}
+                  config={{ tension: 55, friction: 24 }}
+                >
+                  <div
+                    className={`group relative overflow-hidden rounded-4xl p-0.5 transition-smooth hover:scale-[1.015] ${
+                      pkg.popular ? "glow-cyan-lg" : "hover:glow-cyan"
+                    }`}
+                  >
+                    <div
+                      className={`absolute inset-0 rounded-4xl ${
+                        pkg.popular
+                          ? "bg-linear-to-r from-primary via-secondary to-primary opacity-100"
+                          : "bg-linear-to-r from-primary/75 via-secondary/55 to-primary/75 opacity-80 group-hover:opacity-100"
+                      }`}
+                    />
+
+                    {pkg.popular && (
+                      <>
+                        <div className="pointer-events-none absolute -left-16 top-0 h-32 w-32 rounded-full bg-primary/25 blur-3xl" />
+                        <div className="pointer-events-none absolute -right-10 bottom-0 h-36 w-36 rounded-full bg-secondary/25 blur-3xl" />
+                      </>
+                    )}
+
+                    <div
+                      className={`relative rounded-4xl p-5 sm:p-6 ${
+                        pkg.popular
+                          ? "bg-[linear-gradient(135deg,rgba(26,35,66,0.98),rgba(20,27,53,0.96),rgba(26,35,66,0.98))] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05),0_0_0_1px_rgba(0,212,255,0.08)]"
+                          : "bg-[linear-gradient(135deg,rgba(26,35,66,0.96),rgba(20,27,53,0.96))] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
+                      }`}
+                    >
+                      {pkg.popular && (
+                        <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-linear-to-r from-transparent via-white/40 to-transparent" />
+                      )}
+
+                      {pkg.popular && (
+                        <div className="absolute right-4 top-4 z-10">
+                          <div className="rounded-full border border-primary/40 bg-[linear-gradient(135deg,rgba(0,212,255,0.18),rgba(14,165,233,0.14))] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary shadow-[0_0_20px_rgba(0,212,255,0.18)] backdrop-blur-md">
+                            Most Popular
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:items-center">
+                        {/* Left */}
+                        <div className="lg:col-span-3">
+                          <div
+                            className={`rounded-3xl p-5 ${
+                              pkg.popular
+                                ? "border border-primary/25 bg-bg-main/50 shadow-[inset_0_0_0_1px_rgba(0,212,255,0.05)]"
+                                : "border border-border-hover bg-bg-main/40"
+                            }`}
+                          >
+                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">AI System</p>
+
+                            <h3 className="mt-3 text-2xl font-bold">{pkg.name}</h3>
+
+                            <p className="mt-2 text-sm text-text-dimmed">{pkg.subtitle}</p>
+
+                            <div className="mt-6 space-y-3">
+                              <div
+                                className={`rounded-2xl p-4 ${
+                                  pkg.popular
+                                    ? "border border-primary/30 bg-primary/10 shadow-[0_0_20px_rgba(0,212,255,0.08)]"
+                                    : "border border-primary/20 bg-primary/8"
+                                }`}
+                              >
+                                <div className="flex items-start justify-between gap-3">
+                                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
+                                    Capital Requirement
+                                  </p>
+
+                                  {pkg.hasDiscount && (
+                                    <span className="shrink-0 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
+                                      {pkg.discountPercentage}% Off
+                                    </span>
+                                  )}
+                                </div>
+
+                                {pkg.hasDiscount ? (
+                                  <div className="mt-2">
+                                    <div className="flex flex-wrap items-end gap-2">
+                                      <span className="text-lg font-semibold text-text-dimmed line-through">
+                                        {pkg.capital}
+                                      </span>
+
+                                      <span className="text-3xl font-bold text-primary">{pkg.discountedCapital}</span>
+                                    </div>
+
+                                    <p className="mt-2 text-xs font-medium text-text-muted">
+                                      Discounted capital requirement
+                                    </p>
+                                  </div>
+                                ) : (
+                                  <p className="mt-2 text-3xl font-bold text-primary">{pkg.capital}</p>
+                                )}
+                              </div>
+
+                              <div
+                                className={`rounded-2xl p-4 ${
+                                  pkg.popular
+                                    ? "border border-primary/20 bg-bg-card shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
+                                    : "border border-border-hover bg-bg-card"
+                                }`}
+                              >
+                                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
+                                  Estimated Performance
+                                </p>
+
+                                <p className="mt-2 text-lg font-bold text-primary">{pkg.performance}</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Middle */}
+                        <div className="lg:col-span-6">
+                          <div
+                            className={`rounded-3xl p-5 ${
+                              pkg.popular
+                                ? "border border-primary/20 bg-bg-main/40 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
+                                : "border border-border-hover bg-bg-main/30"
+                            }`}
+                          >
+                            <p className="text-sm leading-7 text-text-muted">{pkg.description}</p>
+
+                            <div className="mt-5 flex flex-wrap gap-2">
+                              {pkg.markets.map((market, i) => (
+                                <span
+                                  key={i}
+                                  className={`rounded-full px-3 py-1 text-xs font-medium ${
+                                    pkg.popular
+                                      ? "border border-primary/30 bg-primary/12 text-primary shadow-[0_0_12px_rgba(0,212,255,0.08)]"
+                                      : "border border-primary/20 bg-primary/10 text-primary"
+                                  }`}
+                                >
+                                  {market}
+                                </span>
+                              ))}
+                            </div>
+
+                            <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                              <div
+                                className={`rounded-2xl p-4 ${
+                                  pkg.popular
+                                    ? "border border-primary/20 bg-bg-card shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
+                                    : "border border-border-hover bg-bg-card"
+                                }`}
+                              >
+                                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
+                                  Cycle Duration
+                                </p>
+
+                                <p className="mt-2 text-sm font-semibold text-text-primary">{pkg.cycle}</p>
+                              </div>
+
+                              <div
+                                className={`rounded-2xl p-4 ${
+                                  pkg.popular
+                                    ? "border border-primary/20 bg-bg-card shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
+                                    : "border border-border-hover bg-bg-card"
+                                }`}
+                              >
+                                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
+                                  Markets Covered
+                                </p>
+
+                                <p className="mt-2 text-sm font-semibold text-text-primary">
+                                  {pkg.markets.length} Markets
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Right */}
+                        <div className="lg:col-span-3">
+                          <div
+                            className={`flex h-full flex-col rounded-3xl p-5 ${
+                              pkg.popular
+                                ? "border border-primary/25 bg-bg-main/50 shadow-[inset_0_0_0_1px_rgba(0,212,255,0.05)]"
+                                : "border border-border-hover bg-bg-main/40"
+                            }`}
+                          >
+                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+                              Key Features
+                            </p>
+
+                            <ul className="mt-4 space-y-2">
+                              {pkg.features.map((feature, i) => (
+                                <li key={i} className="flex items-start gap-2 text-sm text-text-muted">
+                                  <Icon
+                                    icon="mdi:check-circle"
+                                    width={16}
+                                    height={16}
+                                    className="mt-1 shrink-0 text-primary"
+                                  />
+
+                                  <span>{feature}</span>
+                                </li>
+                              ))}
+                            </ul>
+
+                            <div className="mt-auto pt-6">
+                              <Button
+                                className={`w-full ${pkg.popular ? "shadow-lg shadow-primary/20" : ""}`}
+                                variant={pkg.popular ? "primary" : "outline"}
+                                onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
+                              >
+                                Select System
+                              </Button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </AnimatedContent>
+
+                {index === 0 && (
+                  <AnimatedContent
+                    direction="horizontal"
+                    distance={100}
+                    reverse={false}
+                    config={{ tension: 55, friction: 24 }}
+                  >
+                    <div className="relative overflow-hidden rounded-4xl border border-primary/30 bg-linear-to-br from-primary/10 via-bg-elevated to-secondary/10 p-5 glow-cyan-lg sm:p-7">
+                      <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/15 blur-3xl" />
+                      <div className="pointer-events-none absolute -bottom-24 left-10 h-56 w-56 rounded-full bg-secondary/15 blur-3xl" />
+
+                      <div className="relative z-10 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-stretch">
+                        <div className="lg:col-span-8">
+                          <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+                            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-3xl border border-primary/30 bg-primary/10 shadow-lg shadow-primary/10">
+                              <Icon icon="mdi:gift-outline" width={32} height={32} className="text-primary" />
+                            </div>
+
+                            <div className="min-w-0 flex-1">
+                              <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1">
+                                <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_currentColor]" />
+
+                                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+                                  Exclusive AI System Giveaway
+                                </p>
+                              </div>
+
+                              <h3 className="mt-4 text-2xl font-bold leading-tight text-text-primary sm:text-3xl">
+                                Only the First 250 Clients Will Receive a Complimentary AI Trading System
+                              </h3>
+
+                              <p className="mt-4 max-w-3xl text-sm leading-7 text-text-muted sm:text-base">
+                                Activate an eligible investment package today and receive a premium AI Trading System at
+                                no additional cost.
+                              </p>
+
+                              <div className="mt-6 flex items-start gap-3 rounded-2xl border border-primary/20 bg-bg-main/45 p-4">
+                                <Icon
+                                  icon="mdi:clock-alert-outline"
+                                  width={22}
+                                  height={22}
+                                  className="mt-0.5 shrink-0 text-primary"
+                                />
+
+                                <p className="text-sm leading-7 text-text-muted">
+                                  Offer ends automatically once all 250 promotional slots have been claimed.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:col-span-4">
+                          <div className="flex flex-col rounded-3xl border border-primary/25 bg-bg-main/60 p-5 backdrop-blur">
+                            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10">
+                              <Icon icon="mdi:account-group-outline" width={25} height={25} className="text-primary" />
+                            </div>
+
+                            <p className="text-3xl font-bold text-primary">250</p>
+
+                            <p className="mt-1 text-sm font-medium leading-6 text-text-muted">
+                              Promotional Slots Available
+                            </p>
+
+                            <div className="mt-auto pt-5">
+                              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10">
+                                <Icon icon="mdi:gift-outline" width={20} height={20} className="text-primary" />
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="flex flex-col rounded-3xl border border-primary/25 bg-bg-main/60 p-5 backdrop-blur">
+                            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10">
+                              <Icon icon="mdi:shield-check-outline" width={25} height={25} className="text-primary" />
+                            </div>
+
+                            <p className="text-3xl font-bold text-primary">FREE</p>
+
+                            <p className="mt-1 text-sm font-medium leading-6 text-text-muted">
+                              Premium AI Trading System
+                            </p>
+
+                            <div className="mt-auto pt-5">
+                              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10">
+                                <Icon icon="mdi:check" width={20} height={20} className="text-primary" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </AnimatedContent>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+
+          {/* Homepage-style CTA */}
+          <AnimatedContent direction="horizontal" distance={100} reverse={false} config={{ tension: 55, friction: 24 }}>
+            <div className="relative z-10 mt-16 rounded-4xl border border-primary/30 bg-linear-to-br from-primary/10 via-bg-elevated to-secondary/10 p-8 text-center glow-cyan-lg lg:p-12">
+              <ShinyText
+                text="Start with Quantum AI"
+                textColor="rgba(0, 212, 255, 0.85)"
+                shineColor="#00D4FF"
+                className="text-xs font-semibold uppercase tracking-[0.24em]"
+              />
+
+              <div className="mx-auto max-w-3xl">
+                <TextGenerateEffect
+                  words="Choose an AI Trading System Built for Your Goals"
+                  className="text-3xl font-bold leading-tight sm:text-4xl"
+                  duration={0.4}
+                  multiColored={true}
+                  animated={false}
+                />
+              </div>
+
+              <p className="mx-auto mt-4 max-w-3xl text-lg text-text-muted">
+                From entry-level access to advanced institutional-grade systems, Quantum AI gives you intelligent tools
+                designed to simplify market participation through automation, analysis, and speed.
+              </p>
+
+              <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+                <Button
+                  className="shadow-lg shadow-primary/20"
+                  onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
+                >
+                  Get Started Today
+                </Button>
+
+                <Button variant="outline" className="px-8 py-3">
+                  Explore AI Systems
+                </Button>
+              </div>
+            </div>
+          </AnimatedContent>
+        </div>
+      </section>
       {/* Hero */}
       <section className="relative isolate overflow-hidden py-20 sm:py-24 lg:py-32">
         <Spotlight className="-top-40 left-1/2 -translate-x-1/2" fill="rgba(0, 212, 255, 0.7)" />
@@ -682,400 +1102,8 @@ const QuantumAI = () => {
           </AnimatedContent>
         </div>
       </section>
-
-      {/* Packages */}
-      <section className="bg-bg-card py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <AnimatedContent direction="horizontal" distance={100} reverse={true} config={{ tension: 55, friction: 24 }}>
-            <div className="mb-12 text-center">
-              <ShinyText
-                text="AI Trading Systems"
-                textColor="rgba(0, 212, 255, 0.85)"
-                shineColor="#00D4FF"
-                className="text-xs font-semibold uppercase tracking-[0.24em]"
-              />
-
-              <h2 className="mt-3">Choose Your AI Trading System</h2>
-
-              <p className="mx-auto mt-4 max-w-4xl text-base leading-8 text-text-muted">
-                Our platform offers a range of intelligent AI trading systems designed to suit different investment
-                goals and trading strategies. Each system is powered by advanced artificial intelligence that
-                continuously analyzes global markets, identifies opportunities, and executes trades automatically.
-                Whether you are starting your trading journey or looking for advanced automated trading solutions, our
-                AI systems are built to deliver powerful market analysis and intelligent execution.
-              </p>
-            </div>
-          </AnimatedContent>
-
-          <div className="space-y-5">
-            {aiPackages.map((pkg, index) => (
-              <React.Fragment key={pkg.name}>
-                <AnimatedContent
-                  direction="horizontal"
-                  distance={100}
-                  reverse={index % 2 === 0}
-                  config={{ tension: 55, friction: 24 }}
-                >
-                  <div
-                    className={`group relative overflow-hidden rounded-4xl p-0.5 transition-smooth hover:scale-[1.015] ${
-                      pkg.popular ? "glow-cyan-lg" : "hover:glow-cyan"
-                    }`}
-                  >
-                    <div
-                      className={`absolute inset-0 rounded-4xl ${
-                        pkg.popular
-                          ? "bg-linear-to-r from-primary via-secondary to-primary opacity-100"
-                          : "bg-linear-to-r from-primary/75 via-secondary/55 to-primary/75 opacity-80 group-hover:opacity-100"
-                      }`}
-                    />
-
-                    {pkg.popular && (
-                      <>
-                        <div className="pointer-events-none absolute -left-16 top-0 h-32 w-32 rounded-full bg-primary/25 blur-3xl" />
-                        <div className="pointer-events-none absolute -right-10 bottom-0 h-36 w-36 rounded-full bg-secondary/25 blur-3xl" />
-                      </>
-                    )}
-
-                    <div
-                      className={`relative rounded-4xl p-5 sm:p-6 ${
-                        pkg.popular
-                          ? "bg-[linear-gradient(135deg,rgba(26,35,66,0.98),rgba(20,27,53,0.96),rgba(26,35,66,0.98))] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.05),0_0_0_1px_rgba(0,212,255,0.08)]"
-                          : "bg-[linear-gradient(135deg,rgba(26,35,66,0.96),rgba(20,27,53,0.96))] shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
-                      }`}
-                    >
-                      {pkg.popular && (
-                        <div className="pointer-events-none absolute inset-x-12 top-0 h-px bg-linear-to-r from-transparent via-white/40 to-transparent" />
-                      )}
-
-                      {pkg.popular && (
-                        <div className="absolute right-4 top-4 z-10">
-                          <div className="rounded-full border border-primary/40 bg-[linear-gradient(135deg,rgba(0,212,255,0.18),rgba(14,165,233,0.14))] px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.2em] text-primary shadow-[0_0_20px_rgba(0,212,255,0.18)] backdrop-blur-md">
-                            Most Popular
-                          </div>
-                        </div>
-                      )}
-
-                      <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:items-center">
-                        {/* Left */}
-                        <div className="lg:col-span-3">
-                          <div
-                            className={`rounded-3xl p-5 ${
-                              pkg.popular
-                                ? "border border-primary/25 bg-bg-main/50 shadow-[inset_0_0_0_1px_rgba(0,212,255,0.05)]"
-                                : "border border-border-hover bg-bg-main/40"
-                            }`}
-                          >
-                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">AI System</p>
-
-                            <h3 className="mt-3 text-2xl font-bold">{pkg.name}</h3>
-
-                            <p className="mt-2 text-sm text-text-dimmed">{pkg.subtitle}</p>
-
-                            <div className="mt-6 space-y-3">
-                              <div
-                                className={`rounded-2xl p-4 ${
-                                  pkg.popular
-                                    ? "border border-primary/30 bg-primary/10 shadow-[0_0_20px_rgba(0,212,255,0.08)]"
-                                    : "border border-primary/20 bg-primary/8"
-                                }`}
-                              >
-                                <div className="flex items-start justify-between gap-3">
-                                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
-                                    Capital Requirement
-                                  </p>
-
-                                  {pkg.hasDiscount && (
-                                    <span className="shrink-0 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.16em] text-primary">
-                                      {pkg.discountPercentage}% Off
-                                    </span>
-                                  )}
-                                </div>
-
-                                {pkg.hasDiscount ? (
-                                  <div className="mt-2">
-                                    <div className="flex flex-wrap items-end gap-2">
-                                      <span className="text-lg font-semibold text-text-dimmed line-through">
-                                        {pkg.capital}
-                                      </span>
-
-                                      <span className="text-3xl font-bold text-primary">{pkg.discountedCapital}</span>
-                                    </div>
-
-                                    <p className="mt-2 text-xs font-medium text-text-muted">
-                                      Discounted capital requirement
-                                    </p>
-                                  </div>
-                                ) : (
-                                  <p className="mt-2 text-3xl font-bold text-primary">{pkg.capital}</p>
-                                )}
-                              </div>
-
-                              <div
-                                className={`rounded-2xl p-4 ${
-                                  pkg.popular
-                                    ? "border border-primary/20 bg-bg-card shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
-                                    : "border border-border-hover bg-bg-card"
-                                }`}
-                              >
-                                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
-                                  Estimated Performance
-                                </p>
-
-                                <p className="mt-2 text-lg font-bold text-primary">{pkg.performance}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Middle */}
-                        <div className="lg:col-span-6">
-                          <div
-                            className={`rounded-3xl p-5 ${
-                              pkg.popular
-                                ? "border border-primary/20 bg-bg-main/40 shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
-                                : "border border-border-hover bg-bg-main/30"
-                            }`}
-                          >
-                            <p className="text-sm leading-7 text-text-muted">{pkg.description}</p>
-
-                            <div className="mt-5 flex flex-wrap gap-2">
-                              {pkg.markets.map((market, i) => (
-                                <span
-                                  key={i}
-                                  className={`rounded-full px-3 py-1 text-xs font-medium ${
-                                    pkg.popular
-                                      ? "border border-primary/30 bg-primary/12 text-primary shadow-[0_0_12px_rgba(0,212,255,0.08)]"
-                                      : "border border-primary/20 bg-primary/10 text-primary"
-                                  }`}
-                                >
-                                  {market}
-                                </span>
-                              ))}
-                            </div>
-
-                            <div className="mt-5 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                              <div
-                                className={`rounded-2xl p-4 ${
-                                  pkg.popular
-                                    ? "border border-primary/20 bg-bg-card shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
-                                    : "border border-border-hover bg-bg-card"
-                                }`}
-                              >
-                                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
-                                  Cycle Duration
-                                </p>
-
-                                <p className="mt-2 text-sm font-semibold text-text-primary">{pkg.cycle}</p>
-                              </div>
-
-                              <div
-                                className={`rounded-2xl p-4 ${
-                                  pkg.popular
-                                    ? "border border-primary/20 bg-bg-card shadow-[inset_0_0_0_1px_rgba(255,255,255,0.03)]"
-                                    : "border border-border-hover bg-bg-card"
-                                }`}
-                              >
-                                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-text-dimmed">
-                                  Markets Covered
-                                </p>
-
-                                <p className="mt-2 text-sm font-semibold text-text-primary">
-                                  {pkg.markets.length} Markets
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Right */}
-                        <div className="lg:col-span-3">
-                          <div
-                            className={`flex h-full flex-col rounded-3xl p-5 ${
-                              pkg.popular
-                                ? "border border-primary/25 bg-bg-main/50 shadow-[inset_0_0_0_1px_rgba(0,212,255,0.05)]"
-                                : "border border-border-hover bg-bg-main/40"
-                            }`}
-                          >
-                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                              Key Features
-                            </p>
-
-                            <ul className="mt-4 space-y-2">
-                              {pkg.features.map((feature, i) => (
-                                <li key={i} className="flex items-start gap-2 text-sm text-text-muted">
-                                  <Icon
-                                    icon="mdi:check-circle"
-                                    width={16}
-                                    height={16}
-                                    className="mt-1 shrink-0 text-primary"
-                                  />
-
-                                  <span>{feature}</span>
-                                </li>
-                              ))}
-                            </ul>
-
-                            <div className="mt-auto pt-6">
-                              <Button
-                                className={`w-full ${pkg.popular ? "shadow-lg shadow-primary/20" : ""}`}
-                                variant={pkg.popular ? "primary" : "outline"}
-                                onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
-                              >
-                                Select System
-                              </Button>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </AnimatedContent>
-
-                {index === 0 && (
-                  <AnimatedContent
-                    direction="horizontal"
-                    distance={100}
-                    reverse={false}
-                    config={{ tension: 55, friction: 24 }}
-                  >
-                    <div className="relative overflow-hidden rounded-4xl border border-red-500/30 bg-linear-to-br from-red-500/10 via-bg-elevated to-red-500/5 p-5 shadow-2xl shadow-red-500/10 sm:p-7">
-                      <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-red-500/10 blur-3xl" />
-                      <div className="pointer-events-none absolute -bottom-24 left-10 h-56 w-56 rounded-full bg-red-500/10 blur-3xl" />
-
-                      <div className="relative z-10 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-stretch">
-                        <div className="lg:col-span-8">
-                          <div className="flex items-start gap-4">
-                            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-3xl border border-red-500/40 bg-red-500/10 shadow-lg shadow-red-500/10">
-                              <Icon icon="mdi:timer-sand" width={32} height={32} className="text-red-400" />
-                            </div>
-
-                            <div className="min-w-0 flex-1">
-                              <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-3 py-1">
-                                <span className="h-2 w-2 rounded-full bg-red-400 shadow-[0_0_12px_currentColor]" />
-
-                                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-red-300">
-                                  Limited Time Offer
-                                </p>
-                              </div>
-
-                              <div className="mt-3 flex flex-wrap items-center gap-3">
-                                <h3 className="text-2xl font-bold leading-tight text-text-primary sm:text-3xl">
-                                  <span className="line-through decoration-red-400 decoration-2">
-                                    50% Discount for the First 800 Customers
-                                  </span>
-                                </h3>
-
-                                <span className="rounded-lg border border-red-500/40 bg-red-500/15 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-red-300">
-                                  Over
-                                </span>
-                              </div>
-
-                              <p className="mt-3 max-w-3xl text-sm leading-7 text-text-muted">
-                                Thank you for the incredible response! The first 800 customer offer has now ended. Stay
-                                tuned for new offers and exclusive opportunities.
-                              </p>
-
-                              <div className="mt-6 max-w-3xl">
-                                <div className="mb-2 flex flex-col gap-1 text-xs font-medium text-text-muted sm:flex-row sm:items-center sm:justify-between">
-                                  <span>800 Customers Successfully Enrolled</span>
-
-                                  <span className="font-semibold text-red-300">Offer Completed</span>
-                                </div>
-
-                                <div className="h-3 overflow-hidden rounded-full border border-red-500/20 bg-bg-main/60">
-                                  <div className="h-full w-full rounded-full bg-linear-to-r from-red-500 to-red-400 shadow-[0_0_18px_rgba(239,68,68,0.35)]" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:col-span-4">
-                          <div className="flex flex-col rounded-3xl border border-red-500/25 bg-bg-main/60 p-5 backdrop-blur">
-                            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-red-500/10">
-                              <Icon icon="mdi:account-group" width={25} height={25} className="text-red-400" />
-                            </div>
-
-                            <p className="text-3xl font-bold text-red-300">800+</p>
-
-                            <p className="mt-1 text-sm font-medium leading-6 text-text-muted">
-                              Customers Successfully Enrolled
-                            </p>
-
-                            <div className="mt-auto pt-5">
-                              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-red-500/30 bg-red-500/10">
-                                <Icon icon="mdi:check" width={20} height={20} className="text-red-400" />
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="flex flex-col rounded-3xl border border-red-500/25 bg-bg-main/60 p-5 backdrop-blur">
-                            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-red-500/10">
-                              <Icon icon="mdi:flag-variant" width={25} height={25} className="text-red-400" />
-                            </div>
-
-                            <p className="text-3xl font-bold text-red-300">OFFER</p>
-
-                            <p className="mt-1 text-sm font-medium leading-6 text-text-muted">Has Ended</p>
-
-                            <div className="mt-auto pt-5">
-                              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-red-500/30 bg-red-500/10">
-                                <Icon icon="mdi:check" width={20} height={20} className="text-red-400" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </AnimatedContent>
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-
-          {/* Homepage-style CTA */}
-          <AnimatedContent direction="horizontal" distance={100} reverse={false} config={{ tension: 55, friction: 24 }}>
-            <div className="relative z-10 mt-16 rounded-4xl border border-primary/30 bg-linear-to-br from-primary/10 via-bg-elevated to-secondary/10 p-8 text-center glow-cyan-lg lg:p-12">
-              <ShinyText
-                text="Start with Quantum AI"
-                textColor="rgba(0, 212, 255, 0.85)"
-                shineColor="#00D4FF"
-                className="text-xs font-semibold uppercase tracking-[0.24em]"
-              />
-
-              <div className="mx-auto max-w-3xl">
-                <TextGenerateEffect
-                  words="Choose an AI Trading System Built for Your Goals"
-                  className="text-3xl font-bold leading-tight sm:text-4xl"
-                  duration={0.4}
-                  multiColored={true}
-                  animated={false}
-                />
-              </div>
-
-              <p className="mx-auto mt-4 max-w-3xl text-lg text-text-muted">
-                From entry-level access to advanced institutional-grade systems, Quantum AI gives you intelligent tools
-                designed to simplify market participation through automation, analysis, and speed.
-              </p>
-
-              <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-                <Button
-                  className="shadow-lg shadow-primary/20"
-                  onClick={() => window.open("https://portal.primeprox.com/register", "_blank")}
-                >
-                  Get Started Today
-                </Button>
-
-                <Button variant="outline" className="px-8 py-3">
-                  Explore AI Systems
-                </Button>
-              </div>
-            </div>
-          </AnimatedContent>
-        </div>
-      </section>
     </div>
   );
-};
+}
 
 export default QuantumAI;
