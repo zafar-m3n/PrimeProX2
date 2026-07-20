@@ -241,6 +241,29 @@ const QuantumAI = () => {
       performance: "12% – 18% Weekly",
       popular: false,
     },
+    {
+      name: "Quantum Infinity",
+      subtitle: "Elite Institutional AI Trading System",
+      description:
+        "Quantum Infinity is engineered for high-capital investors seeking our most advanced AI trading infrastructure. It combines institutional-grade market intelligence, multi-layer AI decision engines, and enhanced portfolio management to support sophisticated trading strategies across global markets.",
+      capital: "$100,000",
+      hasDiscount: false,
+      discountPercentage: 0,
+      discountedCapital: null,
+      markets: ["Forex", "Gold", "Cryptocurrency", "Indices", "Commodities", "Global Stocks"],
+      cycle: "30 – 45 Minutes",
+      features: [
+        "Next-Generation AI Trading Engine",
+        "Institutional Multi-Market Intelligence",
+        "Neural Network Market Analysis",
+        "Advanced Portfolio Optimization",
+        "Smart Capital Allocation System",
+        "Enhanced Risk Management Framework",
+        "Dedicated Premium Support",
+      ],
+      performance: "25% – 30% Weekly",
+      popular: false,
+    },
   ];
 
   return (
