@@ -267,6 +267,12 @@ function QuantumAI() {
     },
   ];
 
+  const TOTAL_PROMOTIONAL_SLOTS = 200;
+  const TAKEN_SLOTS = 17;
+
+  const remainingSlots = Math.max(TOTAL_PROMOTIONAL_SLOTS - TAKEN_SLOTS, 0);
+  const claimedPercentage = Math.min(Math.round((TAKEN_SLOTS / TOTAL_PROMOTIONAL_SLOTS) * 100), 100);
+
   return (
     <div className="overflow-hidden bg-bg-main text-text-primary">
       {/* Exclusive AI System Giveaway */}
@@ -298,7 +304,7 @@ function QuantumAI() {
                       </div>
 
                       <h3 className="mt-4 text-2xl font-bold leading-tight text-text-primary sm:text-3xl">
-                        Only the First 200 Clients Will Receive a Complimentary AI Trading System
+                        Only the First {TOTAL_PROMOTIONAL_SLOTS} Clients Will Receive a Complimentary AI Trading System
                       </h3>
 
                       <p className="mt-4 max-w-3xl text-sm leading-7 text-text-muted sm:text-base">
@@ -306,17 +312,34 @@ function QuantumAI() {
                         additional cost.
                       </p>
 
-                      <div className="mt-6 flex items-start gap-3 rounded-2xl border border-primary/20 bg-bg-main/45 p-4">
-                        <Icon
-                          icon="mdi:clock-alert-outline"
-                          width={22}
-                          height={22}
-                          className="mt-0.5 shrink-0 text-primary"
-                        />
+                      <div className="mt-6 rounded-2xl border border-primary/20 bg-bg-main/45 p-4">
+                        <div className="mb-3 flex items-center justify-between gap-4 text-xs font-medium">
+                          <span className="text-text-muted">
+                            {TAKEN_SLOTS} of {TOTAL_PROMOTIONAL_SLOTS} slots claimed
+                          </span>
 
-                        <p className="text-sm leading-7 text-text-muted">
-                          Offer ends automatically once all 200 promotional slots have been claimed.
-                        </p>
+                          <span className="font-semibold text-primary">{claimedPercentage}%</span>
+                        </div>
+
+                        <div
+                          role="progressbar"
+                          aria-label={`${TAKEN_SLOTS} of ${TOTAL_PROMOTIONAL_SLOTS} promotional slots claimed`}
+                          aria-valuemin={0}
+                          aria-valuemax={TOTAL_PROMOTIONAL_SLOTS}
+                          aria-valuenow={TAKEN_SLOTS}
+                          className="h-3 overflow-hidden rounded-full border border-primary/20 bg-bg-main/70"
+                        >
+                          <div
+                            className="h-full rounded-full bg-linear-to-r from-primary to-secondary transition-all duration-700"
+                            style={{ width: `${claimedPercentage}%` }}
+                          />
+                        </div>
+
+                        <div className="mt-3 flex items-center justify-between gap-4 text-xs">
+                          <span className="text-text-muted">{remainingSlots} slots remaining</span>
+
+                          <span className="font-semibold text-primary">Limited availability</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -328,7 +351,7 @@ function QuantumAI() {
                       <Icon icon="mdi:account-group-outline" width={25} height={25} className="text-primary" />
                     </div>
 
-                    <p className="text-3xl font-bold text-primary">200</p>
+                    <p className="text-3xl font-bold text-primary">{TOTAL_PROMOTIONAL_SLOTS}</p>
 
                     <p className="mt-1 text-sm font-medium leading-6 text-text-muted">Promotional Slots Available</p>
 
