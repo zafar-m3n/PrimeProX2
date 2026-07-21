@@ -269,6 +269,98 @@ function QuantumAI() {
 
   return (
     <div className="overflow-hidden bg-bg-main text-text-primary">
+      {/* Exclusive AI System Giveaway */}
+      <section className="relative isolate overflow-hidden bg-bg-card py-16 sm:py-20">
+        <div className="pointer-events-none absolute inset-0 gradient-mesh" />
+        <div className="glow-orb glow-orb-cyan -top-20 right-0 h-72 w-72 md:h-96 md:w-96" />
+        <div className="glow-orb glow-orb-blue bottom-0 left-0 h-72 w-72 md:h-112 md:w-md" />
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedContent direction="horizontal" distance={100} reverse={false} config={{ tension: 55, friction: 24 }}>
+            <div className="relative overflow-hidden rounded-4xl border border-primary/30 bg-linear-to-br from-primary/10 via-bg-elevated to-secondary/10 p-5 glow-cyan-lg sm:p-7">
+              <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/15 blur-3xl" />
+              <div className="pointer-events-none absolute -bottom-24 left-10 h-56 w-56 rounded-full bg-secondary/15 blur-3xl" />
+
+              <div className="relative z-10 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-stretch">
+                <div className="lg:col-span-8">
+                  <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-3xl border border-primary/30 bg-primary/10 shadow-lg shadow-primary/10">
+                      <Icon icon="mdi:gift-outline" width={32} height={32} className="text-primary" />
+                    </div>
+
+                    <div className="min-w-0 flex-1">
+                      <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1">
+                        <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_currentColor]" />
+
+                        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
+                          Exclusive AI System Giveaway
+                        </p>
+                      </div>
+
+                      <h3 className="mt-4 text-2xl font-bold leading-tight text-text-primary sm:text-3xl">
+                        Only the First 200 Clients Will Receive a Complimentary AI Trading System
+                      </h3>
+
+                      <p className="mt-4 max-w-3xl text-sm leading-7 text-text-muted sm:text-base">
+                        Activate an eligible investment package today and receive a premium AI Trading System at no
+                        additional cost.
+                      </p>
+
+                      <div className="mt-6 flex items-start gap-3 rounded-2xl border border-primary/20 bg-bg-main/45 p-4">
+                        <Icon
+                          icon="mdi:clock-alert-outline"
+                          width={22}
+                          height={22}
+                          className="mt-0.5 shrink-0 text-primary"
+                        />
+
+                        <p className="text-sm leading-7 text-text-muted">
+                          Offer ends automatically once all 200 promotional slots have been claimed.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:col-span-4">
+                  <div className="flex flex-col rounded-3xl border border-primary/25 bg-bg-main/60 p-5 backdrop-blur">
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10">
+                      <Icon icon="mdi:account-group-outline" width={25} height={25} className="text-primary" />
+                    </div>
+
+                    <p className="text-3xl font-bold text-primary">200</p>
+
+                    <p className="mt-1 text-sm font-medium leading-6 text-text-muted">Promotional Slots Available</p>
+
+                    <div className="mt-auto pt-5">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10">
+                        <Icon icon="mdi:gift-outline" width={20} height={20} className="text-primary" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col rounded-3xl border border-primary/25 bg-bg-main/60 p-5 backdrop-blur">
+                    <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10">
+                      <Icon icon="mdi:shield-check-outline" width={25} height={25} className="text-primary" />
+                    </div>
+
+                    <p className="text-3xl font-bold text-primary">FREE</p>
+
+                    <p className="mt-1 text-sm font-medium leading-6 text-text-muted">Premium AI Trading System</p>
+
+                    <div className="mt-auto pt-5">
+                      <div className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10">
+                        <Icon icon="mdi:check" width={20} height={20} className="text-primary" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </AnimatedContent>
+        </div>
+      </section>
+
       {/* Exclusive AI System Promotion */}
       <section className="relative isolate overflow-hidden py-16 sm:py-20 lg:py-24">
         <Spotlight className="-top-40 left-1/2 -translate-x-1/2" fill="rgba(0, 212, 255, 0.7)" />
@@ -549,100 +641,6 @@ function QuantumAI() {
                     </div>
                   </div>
                 </AnimatedContent>
-
-                {index === 0 && (
-                  <AnimatedContent
-                    direction="horizontal"
-                    distance={100}
-                    reverse={false}
-                    config={{ tension: 55, friction: 24 }}
-                  >
-                    <div className="relative overflow-hidden rounded-4xl border border-primary/30 bg-linear-to-br from-primary/10 via-bg-elevated to-secondary/10 p-5 glow-cyan-lg sm:p-7">
-                      <div className="pointer-events-none absolute -right-20 -top-20 h-56 w-56 rounded-full bg-primary/15 blur-3xl" />
-                      <div className="pointer-events-none absolute -bottom-24 left-10 h-56 w-56 rounded-full bg-secondary/15 blur-3xl" />
-
-                      <div className="relative z-10 grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-stretch">
-                        <div className="lg:col-span-8">
-                          <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-                            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-3xl border border-primary/30 bg-primary/10 shadow-lg shadow-primary/10">
-                              <Icon icon="mdi:gift-outline" width={32} height={32} className="text-primary" />
-                            </div>
-
-                            <div className="min-w-0 flex-1">
-                              <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1">
-                                <span className="h-2 w-2 rounded-full bg-primary shadow-[0_0_12px_currentColor]" />
-
-                                <p className="text-xs font-semibold uppercase tracking-[0.22em] text-primary">
-                                  Exclusive AI System Giveaway
-                                </p>
-                              </div>
-
-                              <h3 className="mt-4 text-2xl font-bold leading-tight text-text-primary sm:text-3xl">
-                                Only the First 250 Clients Will Receive a Complimentary AI Trading System
-                              </h3>
-
-                              <p className="mt-4 max-w-3xl text-sm leading-7 text-text-muted sm:text-base">
-                                Activate an eligible investment package today and receive a premium AI Trading System at
-                                no additional cost.
-                              </p>
-
-                              <div className="mt-6 flex items-start gap-3 rounded-2xl border border-primary/20 bg-bg-main/45 p-4">
-                                <Icon
-                                  icon="mdi:clock-alert-outline"
-                                  width={22}
-                                  height={22}
-                                  className="mt-0.5 shrink-0 text-primary"
-                                />
-
-                                <p className="text-sm leading-7 text-text-muted">
-                                  Offer ends automatically once all 250 promotional slots have been claimed.
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:col-span-4">
-                          <div className="flex flex-col rounded-3xl border border-primary/25 bg-bg-main/60 p-5 backdrop-blur">
-                            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10">
-                              <Icon icon="mdi:account-group-outline" width={25} height={25} className="text-primary" />
-                            </div>
-
-                            <p className="text-3xl font-bold text-primary">250</p>
-
-                            <p className="mt-1 text-sm font-medium leading-6 text-text-muted">
-                              Promotional Slots Available
-                            </p>
-
-                            <div className="mt-auto pt-5">
-                              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10">
-                                <Icon icon="mdi:gift-outline" width={20} height={20} className="text-primary" />
-                              </div>
-                            </div>
-                          </div>
-
-                          <div className="flex flex-col rounded-3xl border border-primary/25 bg-bg-main/60 p-5 backdrop-blur">
-                            <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10">
-                              <Icon icon="mdi:shield-check-outline" width={25} height={25} className="text-primary" />
-                            </div>
-
-                            <p className="text-3xl font-bold text-primary">FREE</p>
-
-                            <p className="mt-1 text-sm font-medium leading-6 text-text-muted">
-                              Premium AI Trading System
-                            </p>
-
-                            <div className="mt-auto pt-5">
-                              <div className="flex h-9 w-9 items-center justify-center rounded-full border border-primary/30 bg-primary/10">
-                                <Icon icon="mdi:check" width={20} height={20} className="text-primary" />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </AnimatedContent>
-                )}
               </React.Fragment>
             ))}
           </div>
