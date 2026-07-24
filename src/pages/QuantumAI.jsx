@@ -268,7 +268,7 @@ function QuantumAI() {
   ];
 
   const TOTAL_PROMOTIONAL_SLOTS = 200;
-  const TAKEN_SLOTS = 109;
+  const TAKEN_SLOTS = 121;
 
   const remainingSlots = Math.max(TOTAL_PROMOTIONAL_SLOTS - TAKEN_SLOTS, 0);
   const claimedPercentage = Math.min(Math.round((TAKEN_SLOTS / TOTAL_PROMOTIONAL_SLOTS) * 100), 100);
