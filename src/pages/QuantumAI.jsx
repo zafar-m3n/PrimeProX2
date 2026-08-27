@@ -272,31 +272,30 @@ function QuantumAI() {
       investment: "$15,000",
       system: "Quantum Edge",
       total: 20,
-      taken: 0,
+      taken: 2,
     },
     {
       investment: "$30,000",
       system: "Quantum Elite",
       total: 20,
-      taken: 0,
+      taken: 4,
     },
     {
       investment: "$60,000",
       system: "Quantum Institutional",
       total: 20,
-      taken: 0,
+      taken: 6,
     },
     {
       investment: "$100,000",
       system: "Quantum Capital Pro",
       total: 20,
-      taken: 0,
+      taken: 7,
     },
   ];
 
   return (
     <div className="overflow-hidden bg-bg-main text-text-primary">
-      {/* Exclusive AI System Giveaway */}
       {/* Exclusive AI System Giveaway */}
       <section className="relative isolate overflow-hidden bg-bg-card py-16 sm:py-20">
         <div className="pointer-events-none absolute inset-0 gradient-mesh" />
